@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
     <title>Timothé Jacob - Portfolio</title>
 </head>
 <body>
@@ -20,24 +21,24 @@
         </nav>
         <div class="header-right">
                 <button onclick="window.open('https://github.com/tiimjcb', '_blank')" class="btn-icon">
-                    <img src="assets/icons/github-icon.png" alt="GitHub" style="width: 20px; height: 20px;">
+                    <img src="assets/icons/github-mark-white.svg" alt="GitHub">
                 </button>
                 <button onclick="window.open('https://www.linkedin.com/in/timothe-jacob', '_blank')" class="btn-icon">
-                    <img src="assets/icons/linkedin-icon.png" alt="LinkedIn" style="width: 20px; height: 20px;">
+                    <img src="assets/icons/linkedin.svg" alt="LinkedIn">
                 </button>
-                <button onclick="window.location.href='assets/cv.pdf'" class="btn-orange">Télécharger CV</button>
+                <button onclick="window.location.href='assets/cv.pdf'" class="btn-orange">Télécharger mon CV</button>
         </div>
     </header>
     <main>
         <div id="home">
-            <div id="homeImage">
+            <div id="homeImage" class="revealL">
                 <img src="assets/img/memoji.png" alt="Memoji de Tim">
             </div>
-            <div id="homeText">
-                <h1>Bonjour!</h1>
-                <h2>Je suis Timothé Jacob</h2>
+            <div id="homeText" class="revealR">
+                <h1 id="hello">Bonjour!</h1>
+                <h2>> Je m'appelle Tim!</h2>
                 <p>
-                    Étudiant passioné par l'informatique, j'explore le vaste monde du développement web et logiciel en quête de nouvelles connaissances et compétences.
+                    Étudiant passioné par l'informatique, j'explore le vaste monde du développement en quête de nouvelles connaissances et compétences.
                 </p>
             </div>
         </div>
@@ -70,5 +71,6 @@
     <footer>
         <p>Timothé Jacob - 2024</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
