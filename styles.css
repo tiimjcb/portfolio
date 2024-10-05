@@ -27,18 +27,11 @@ nav a{
     font-size: larger;
 }
 
-header div.header-right{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header div.header-right div.reseaux a{
+header div.header-right button {
+    margin-left : 10px;
     color: #EBF5EE;
     text-decoration: none;
 }
-
 
 
 .btn-orange {
