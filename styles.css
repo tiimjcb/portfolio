@@ -290,13 +290,16 @@ section{
     align-items: center;
     justify-content: center;
     padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 1 1 calc(20% - 30px); 
-    max-width: calc(33.33% - 30px); 
+    transition: scale 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 calc(10% - 30px); /* Ajustez cette valeur selon le nombre de colonnes souhaité */
+    max-width: calc(33.333% - 30px); /* Ajustez cette valeur selon le nombre de colonnes souhaité */
+    height: 110px;
+    box-sizing: border-box;
+    ;
 }
 
 .card img {
-    width: 50px;
+    width: auto;
     height: 50px;
     margin-bottom: 10px;
 }
@@ -309,6 +312,6 @@ section{
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    scale:1.1;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
