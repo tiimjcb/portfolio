@@ -3,72 +3,72 @@ const sr = ScrollReveal();
 
 // ---------- Without delay
 sr.reveal('.revealL', {
-  duration: 1000, 
-  origin: 'left',
-  distance: '50px',
-  reset: true, 
-  viewFactor: 0, 
+    duration: 1000, 
+    origin: 'left',
+    distance: '50px',
+    reset: false, 
+    viewFactor: 0, 
 });
 
 sr.reveal('.revealR', {
-    duration: 1000,
-    origin: 'right',
-    distance: '50px',
-    reset: true,
-    viewFactor: 0,
-    });
+        duration: 1000,
+        origin: 'right',
+        distance: '50px',
+        reset: false,
+        viewFactor: 0,
+        });
 
 sr.reveal('.revealT', {
-    duration: 1000,
-    origin: 'top',
-    distance: '50px',
-    reset: true,
-    viewFactor: 0,
-    });
+        duration: 1000,
+        origin: 'top',
+        distance: '50px',
+        reset: false,
+        viewFactor: 0,
+        });
 
 sr.reveal('.revealB', {
-    duration: 1000,
-    origin: 'bottom',
-    distance: '50px',
-    reset: true,
-    viewFactor: 0,
+        duration: 1000,
+        origin: 'bottom',
+        distance: '50px',
+        reset: false,
+        viewFactor: 0,
 });
 
 // ---------- With delay
 sr.reveal('.revealLwD', {
-    duration: 1000, 
-    origin: 'left',
-    distance: '50px',
-    reset: true, 
-    delay: 80,
-    viewFactor: 0, 
-  });
+        duration: 1000, 
+        origin: 'left',
+        distance: '50px',
+        reset: false, 
+        delay: 80,
+        viewFactor: 0, 
+    });
 
 sr.reveal('.revealRwD', {
-    duration: 1000,
-    origin: 'right',
-    distance: '50px',
-    reset: true,
-    delay: 80,
-    viewFactor: 0,
-    });
+        duration: 1000,
+        origin: 'right',
+        distance: '50px',
+        reset: false,
+        delay: 80,
+        viewFactor: 0,
+        });
 
 sr.reveal('.revealTwD', {
-    duration: 1000,
-    origin: 'top',
-    distance: '50px',
-    reset: true,
-    delay: 80,
-    viewFactor: 0,
-    });
+        duration: 1000,
+        origin: 'top',
+        distance: '50px',
+        reset: false,
+        delay: 80,
+        viewFactor: 0,
+        });
 
 sr.reveal('.revealBwD', {
-    duration: 1000,
-    origin: 'bottom',
-    distance: '50px',
-    reset: true,
-    delay: 80,
-    viewFactor: 0,
+        duration: 1000,
+        origin: 'bottom',
+        distance: '50px',
+        reset: false,
+        delay: 80,
+        viewFactor: 0,
 });
 
 
@@ -91,7 +91,7 @@ function updateHello() {
     const greetingElement = document.getElementById('hello');
     
     if (hours >= 18 || hours < 6) {
-        greetingElement.textContent = 'Bonsoir!';
+        greetingElement.textContent = 'Bonsoir !';
     }
 }
 
@@ -104,8 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate');
-            } else {
-                entry.target.classList.remove('animate');
             }
         });
     }, {

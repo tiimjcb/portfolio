@@ -24,14 +24,14 @@ p, ul, li{
 
 /* ---------- HEADER ---------- */
 
-header{
+header {
     background-color: #1F1F24;
     text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding : 20px 30px;
+    padding: 20px 30px;
     position: sticky;
     top: 0;
     left: 0;
@@ -42,14 +42,45 @@ header{
 
 header.scrolled {
     box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.5);
-    padding:15px 40px;
+    padding: 15px 40px;
 }
 
-nav a{
-    color:#EBF5EE;
+nav {
+    display: flex;
+    align-items: center;
+    transition: margin-left 0.5s ease;
+}
+
+nav img {
+    position: absolute;
+    left: 50px; 
+    opacity: 0;
+    width: auto;
+    height: 50px;
+    margin-right: 30px;
+    transform: translateX(-70px); /* Cache l'image à gauche */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+header.scrolled nav{
+    margin-left: 80px;
+}
+
+header.scrolled nav img {
+    opacity: 1;
+    transform: translateX(0); /* Fait glisser l'image vers la droite */
+}
+
+nav a {
+    color: #EBF5EE;
     text-decoration: none;
-    margin-right : 20px;
+    margin-right: 20px;
     font-size: larger;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #ff6404;
 }
 
 header div.header-right {
@@ -245,6 +276,7 @@ div#home div#homeText p {
     margin-top: 5px;
     margin-bottom: 30px;
     margin-left: 0px;
+    padding-left:35px;
     line-height: 1.5;
     list-style-type: none;
 }
@@ -270,7 +302,7 @@ section{
 }
 
 /* ---------- CARTES DES LANGAGES ---------- */
-.cards {
+.skillCards {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
@@ -281,7 +313,7 @@ section{
     box-sizing: border-box;
 }
 
-.card {
+.skillCard {
     background-color: #2C2C34;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -292,26 +324,25 @@ section{
     padding: 20px;
     transition: scale 0.3s ease, box-shadow 0.3s ease;
     flex: 1 1 calc(10% - 30px); /* Ajustez cette valeur selon le nombre de colonnes souhaité */
-    max-width: calc(33.333% - 30px); /* Ajustez cette valeur selon le nombre de colonnes souhaité */
+    max-width: calc(35% - 30px); /* Ajustez cette valeur selon le nombre de colonnes souhaité */
     height: 110px;
     box-sizing: border-box;
-    ;
 }
 
-.card img {
+.skillCard img {
     width: auto;
     height: 50px;
     margin-bottom: 10px;
 }
 
-.card h4 {
+.skillCard h4 {
     font-size: 1.2rem;
     font-weight: 400;
     color: #EBF5EE;
     margin: 0;
 }
 
-.card:hover {
+.skillCard:hover {
     scale:1.1;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
