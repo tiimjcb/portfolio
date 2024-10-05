@@ -1,12 +1,13 @@
-
+/* --------- ScrollReveal --------- */
 const sr = ScrollReveal();
 
+// ---------- Without delay
 sr.reveal('.revealL', {
-  duration: 1000, // Durée de l'animation en millisecondes
-  origin: 'left', // L'animation démarre du bas
-  distance: '50px', // Distance de déplacement de l'élément pendant l'animation
-  reset: true, // Permet à l'animation de se répéter au scroll
-  viewFactor: 0, // Permet de définir à quel point l'élément doit être visible avant de déclencher l'animation
+  duration: 1000, 
+  origin: 'left',
+  distance: '50px',
+  reset: true, 
+  viewFactor: 0, 
 });
 
 sr.reveal('.revealR', {
@@ -16,7 +17,62 @@ sr.reveal('.revealR', {
     reset: true,
     viewFactor: 0,
     });
-    
+
+sr.reveal('.revealT', {
+    duration: 1000,
+    origin: 'top',
+    distance: '50px',
+    reset: true,
+    viewFactor: 0,
+    });
+
+sr.reveal('.revealB', {
+    duration: 1000,
+    origin: 'bottom',
+    distance: '50px',
+    reset: true,
+    viewFactor: 0,
+});
+
+// ---------- With delay
+sr.reveal('.revealLwD', {
+    duration: 1000, 
+    origin: 'left',
+    distance: '50px',
+    reset: true, 
+    delay: 80,
+    viewFactor: 0, 
+  });
+
+sr.reveal('.revealRwD', {
+    duration: 1000,
+    origin: 'right',
+    distance: '50px',
+    reset: true,
+    delay: 80,
+    viewFactor: 0,
+    });
+
+sr.reveal('.revealTwD', {
+    duration: 1000,
+    origin: 'top',
+    distance: '50px',
+    reset: true,
+    delay: 80,
+    viewFactor: 0,
+    });
+
+sr.reveal('.revealBwD', {
+    duration: 1000,
+    origin: 'bottom',
+    distance: '50px',
+    reset: true,
+    delay: 80,
+    viewFactor: 0,
+});
+
+
+
 
 /* --------- Retraction du header --------- */
 
@@ -39,8 +95,52 @@ function updateHello() {
     }
 }
 
+/* --------- Animation du HR --------- */
+
+document.addEventListener('DOMContentLoaded', function() {
+    const hrElements = document.querySelectorAll('.sectionHeader hr');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            } else {
+                entry.target.classList.remove('animate');
+            }
+        });
+    }, {
+        threshold: 0.1 // 10%
+    });
+
+    hrElements.forEach(hr => {
+        observer.observe(hr);
+    });
+});
 
 
+/* --------- Smooth scroll --------- */
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('nav a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); 
+
+            const targetId = this.getAttribute('href').substring(1); 
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                const offset = -50; // Décalage nécéssaire sinon ca passe en dessous du header
+                const targetPosition = targetElement.offsetTop + offset;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth' 
+                });
+            }
+        });
+    });
+});
 
 /* --------- Main --------- */
 updateHello();

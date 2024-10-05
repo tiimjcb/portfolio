@@ -8,6 +8,20 @@ body {
     color:#EBF5EE;
 }
 
+b{
+    font-weight: 650;
+}
+
+h1, h2, h3, h4, h5, h6, p, b{
+    cursor: default;
+}
+
+p, ul, li{
+    color: #C0C0C0;
+    font-weight: 400;
+}
+
+
 /* ---------- HEADER ---------- */
 
 header{
@@ -97,17 +111,17 @@ header div.header-right button.btn-orange:not([disabled]):hover {
 }
 
 header div.header-right button:not([disabled]):focus {
-    box-shadow: 0 0 .15rem rgba(0, 0, 0, 0.3), -.075rem -.075rem .5rem rgba(255, 255, 255, 0.3), .075rem .075rem .5rem rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 .3rem rgba(0, 0, 0, 0.3), -.15rem -.15rem 1rem rgba(255, 255, 255, 0.3), .15rem .15rem 1rem rgba(255, 255, 255, 0.3);
 }
 
 header div.header-right button:not([disabled]):hover {
-    box-shadow: 0 0 .15rem rgba(0, 0, 0, 0.3), -.075rem -.075rem .5rem rgba(255, 255, 255, 0.3), .075rem .075rem .5rem rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 .3rem rgba(0, 0, 0, 0.3), -.15rem -.15rem 1rem rgba(255, 255, 255, 0.3), .15rem .15rem 1rem rgba(255, 255, 255, 0.3);
 }
 
 /* ---------- MAIN ---------- */
 
 main{
-    margin:0% 5%;
+    margin:0% 10%;
 }
 
 /* ---------- HOME ---------- */
@@ -117,6 +131,7 @@ div#home {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-bottom:30px;
 }
 
 div#home div#homeImage,
@@ -126,7 +141,7 @@ div#home div#homeText {
 }
 
 div#home div#homeImage {
-    padding: 120px 180px 120px 70px;
+    padding: 80px 180px 120px 0px;
 }
 
 div#home div#homeImage img {
@@ -171,4 +186,129 @@ div#home div#homeText p {
     font-size: 1.5rem;
     font-weight: 250;
     margin-top: 0px;
+}
+
+/* ---------- SECTIONS ---------- */
+
+.sectionHeader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+.sectionHeader h2 {
+    font-size: 3.2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}  
+
+.sectionHeader hr {
+    width: 1%;
+    border: 1px solid #47474f;
+    margin-top: 0px;
+    transition: width 0.5s ease;
+}
+
+.sectionHeader hr.animate {
+    width: 100%;
+}
+
+.sectionContent {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin: 10px 0px;
+    width:100%;
+}
+
+.sectionContent h3{
+    font-size: 2.2em;
+    font-weight: 400;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.sectionContent p{
+    font-size: 1.2em;
+    font-weight: 150;
+    margin-top: 5px;
+    margin-bottom : 30px;
+    margin-left: 30px;
+    line-height: 1.35;
+}
+
+.sectionContent ul {
+    font-size: 1.2em;
+    font-weight: 150;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+    line-height: 1.5;
+    list-style-type: none;
+}
+
+.sectionContent ul li{
+    margin-top: 5px;
+    margin-bottom : 5px;
+}
+
+.sectionContent ul li:first-child {
+    margin-top: 0;
+}
+.noMarginBottom {
+    margin-bottom: 0 !important;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom : 75px;
+}
+
+/* ---------- CARTES DES LANGAGES ---------- */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    width: calc(100% - 60px); /* 30px de marge de chaque côté */
+    margin: 0 auto;
+    padding: 30px 0;
+    box-sizing: border-box;
+}
+
+.card {
+    background-color: #2C2C34;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 calc(20% - 30px); 
+    max-width: calc(33.33% - 30px); 
+}
+
+.card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.card h4 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #EBF5EE;
+    margin: 0;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
