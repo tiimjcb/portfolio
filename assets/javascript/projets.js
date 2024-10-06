@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Pour créer les cartes de projet
     projects.forEach((project) => {
         // Nécéssaire sinon ca déconne avec GitHub Pages
-        const iconPath = isGithubPages ? `/portfolio2.0${project.icon}` : project.icon;
+        const iconPath = isGithubPages ? `/portfolio${project.icon}` : project.icon;
 
         const card = document.createElement('div');
         card.className = 'project-card';
