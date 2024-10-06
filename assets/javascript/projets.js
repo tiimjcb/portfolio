@@ -95,4 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Gestion du clic en dehors des cartes pour fermer l'overlay
     document.addEventListener('click', (e) => {
         // Vérifie si le clic n'a pas eu lieu à l'intérieur d'une carte
-        if (!e.target.closest('.project-card')) 
+        if (!e.target.closest('.project-card')) {
+            closeAllCards(); // Ferme toutes les cartes
+        }
+    });
+});
