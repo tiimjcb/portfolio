@@ -141,5 +141,25 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+/* --------- Formulaire de contact --------- */
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+
+        const email = 'timothe.jacob@icloud.com'; 
+
+        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nom: ${name}\n\nMessage: ${message}`)}`;
+
+        window.location.href = mailtoLink;
+    });
+});
+
+
 /* --------- Main --------- */
 updateHello();

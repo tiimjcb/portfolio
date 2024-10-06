@@ -21,11 +21,6 @@ p, ul, li{
     font-weight: 400;
 }
 
-.no-scroll {
-    overflow: hidden !important;
-}
-
-
 
 
 /* ---------- HEADER ---------- */
@@ -383,8 +378,8 @@ section{
     border-radius: 10px;
     text-align: center;
     position: relative;
-    overflow: hidden; /* Évite le débordement */
-    transition: transform 0.3s ease; /* Animation pour le hover */
+    overflow: hidden; 
+    transition: transform 0.3s ease;
 }
 
 .project-card h3{
@@ -414,13 +409,11 @@ section{
     line-height: 1.2;
 }
 
-/* Applique un flou seulement sur les éléments internes, pas sur l'overlay */
 .project-card.active .card-content {
     filter: blur(5px);
     transition: filter 0.3s ease;
 }
 
-/* Conteneur de l'image et du titre */
 .card-content img {
     height: 70px;
     width: auto;
@@ -429,12 +422,10 @@ section{
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 }
 
-/* Effet de survol */
 .project-card:hover {
     transform: scale(1.02);
 }
 
-/* Conteneur de l'overlay */
 .card-overlay {
     position: absolute;
     top: 0;
@@ -453,7 +444,7 @@ section{
     z-index: 1; /* S'assure que l'overlay est au-dessus du contenu */
 }
 
-/* Titre en haut à gauche */
+
 .card-overlay h4 {
     margin: 0;
     align-self: flex-start;
@@ -469,13 +460,12 @@ section{
     max-width: 100%;
 }
 
-/* Détails de la carte (description) */
 .card-details {
-    flex: 1 1 60%; /* Prend 60% de la hauteur */
+    flex: 1 1 60%; 
     color: #EBF5EE;
-    text-align: left; /* Aligne le texte à gauche */
+    text-align: left;
     display: flex;
-    align-items: center; /* Centre verticalement le contenu */
+    align-items: center; 
     justify-content: left;
 }
 
@@ -492,3 +482,106 @@ section{
     opacity: 1;
     visibility: visible;
 }
+
+/* ---------- SECTION CONTACT ---------- */
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-right: 0px;
+}
+
+.contact-form {
+    flex: 0 0 55%;
+    box-sizing: border-box;
+}
+
+.contact-form h3 {
+    font-size: 2.2em;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-top:5px;
+}
+
+.contact-form p{
+    font-size: 1.1em;
+    font-weight: 150;
+    margin-top: 5px;
+    margin-bottom : 20px;
+    margin-left: 35px;
+    line-height: 1.35;
+
+}
+
+.contact-image {
+    flex: 0 0 40%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.contact-image img {
+    max-width: 400px;
+    border-radius: 10px;
+    -webkit-filter: drop-shadow(0 0 10px #ffffff);
+    filter: drop-shadow(0 0 10px #ffffff);
+}
+
+/* ---------- FORMULAIRE DE CONTACT ---------- */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding-left: 35px;
+    box-sizing: border-box;
+}
+
+#contact-form label {
+    font-size: 1.2em;
+    color: #EBF5EE;
+    margin-bottom: -5px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    padding: 10px;
+    font-size: 1em;
+    color: #EBF5EE;
+    background-color: #2C2C34;
+    border: 1px solid #47474f;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 90%;
+}
+
+#contact-form textarea {
+    resize: vertical;
+    min-height: 100px}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: #ff6404;
+    font-family: 'Gabarito', sans-serif;
+}
+
+#contact-form button {
+    align-self: flex-start;
+    background: linear-gradient(to bottom right, #EF4765, #ff6404);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 1em;
+    font-family: 'Gabarito', sans-serif;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+#contact-form button:hover {
+    box-shadow: 0 0 10px rgba(255, 100, 4, 0.5);
+}
+
