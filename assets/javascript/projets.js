@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             title: "App. de gestion d'évènements",
             date: "2024-06-01",
-            closedDescription: "Développement d'une application de gestion d'évènements en Java, avec interface graphique.",
+            closedDescription: "Développement d'une app. de gestion d'évènements avec interface graphique.",
             openDescription: "Projet dans le cadre des études. Développement d'une application de gestion d'évènements en Java, avec interface graphique, permettant de gérer des évènements et des participants.",
             footerText: "Compétences renforcées : JavaFX, Leadership, Gestion de projet",
             icon: "/assets/icons/partyEmoji.png"
@@ -88,12 +88,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const card = document.createElement('div');
         card.className = 'project-card';
+        
+        // Création du conteneur pour la nouvelle disposition
         card.innerHTML = `
             <div class="card-content">
-                <img src="${iconPath}" alt="${project.title}">
-                <h3>${project.title}</h3>
+                <div class="card-image-wrapper">
+                    <img src="${iconPath}" alt="${project.title}">
+                </div>
+                <div class="card-text-wrapper">
+                    <h3>${project.title}</h3>
+                    <p class="desc">${project.closedDescription}</p>
+                </div>
                 <p class="date">${formatDate(project.date)}</p>
-                <p class="desc">${project.closedDescription}</p>
             </div>
             <div class="card-overlay">
                 <h4>${project.title}</h4>
@@ -106,26 +112,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Gestion du clic pour afficher l'overlay
         card.addEventListener('click', (e) => {
-            e.stopPropagation(); // Empêche la propagation du clic à l'élément parent
-            closeAllCards(); // Ferme toutes les cartes avant d'ouvrir une nouvelle
-            card.classList.add('active'); // Ajouter la classe active pour déclencher l'animation
+            e.stopPropagation();
+            closeAllCards();
+
+            // Vérifiez si l'écran est inférieur à 650px
+            if (window.innerWidth < 650) {
+                const cardContent = card.querySelector('.card-content');
+                const cardOverlay = card.querySelector('.card-overlay');
+                
+                // Déplie la carte pour afficher le contenu complet
+                card.style.height = `${cardContent.scrollHeight + cardOverlay.scrollHeight}px`;
+            }
+            
+            card.classList.add('active');
         });
 
         projectCardsContainer.appendChild(card);
     });
 
-    // Fonction pour fermer toutes les cartes
     function closeAllCards() {
         document.querySelectorAll('.project-card.active').forEach(card => {
             card.classList.remove('active');
+            // Réinitialise la hauteur de la carte
+            card.style.height = '';
         });
     }
 
-    // Gestion du clic en dehors des cartes pour fermer l'overlay
     document.addEventListener('click', (e) => {
-        // Vérifie si le clic n'a pas eu lieu à l'intérieur d'une carte
         if (!e.target.closest('.project-card')) {
-            closeAllCards(); // Ferme toutes les cartes
+            closeAllCards();
         }
     });
+
 });

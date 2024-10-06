@@ -16,6 +16,10 @@ h1, h2, h3, h4, h5, h6, p, b{
     cursor: default;
 }
 
+h3.smallScreen {
+    display: none !important;
+}
+
 p, ul, li{
     color: #C0C0C0;
     font-weight: 400;
@@ -356,8 +360,8 @@ section{
     justify-content: center;
     padding: 20px;
     transition: scale 0.3s ease, box-shadow 0.3s ease;
-    flex: 1 1 calc(10% - 30px); /* Ajustez cette valeur selon le nombre de colonnes souhaité */
-    max-width: calc(35% - 30px); /* Ajustez cette valeur selon le nombre de colonnes souhaité */
+    flex: 1 1 auto; /* Allow cards to grow and shrink */
+    max-width: calc(35% - 30px); /* Adjust this value according to the desired number of columns */
     height: 110px;
     box-sizing: border-box;
 }
@@ -376,8 +380,16 @@ section{
 }
 
 .skillCard:hover {
-    scale:1.1;
+    scale: 1.1;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.skillCard {
+    min-width: fit-content;
+}
+
+.skillCard img {
+    max-width: 100%; 
 }
 
 
@@ -397,33 +409,38 @@ section{
     text-align: center;
     position: relative;
     overflow: hidden; 
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, height 0.3s ease; /* Ajout de la transition pour la hauteur */
 }
 
-.project-card h3{
+
+.project-card h3 {
     margin-top: 0px;
     margin-bottom: 5px;
     font-size: 1.5em;
     font-weight: 400;
     cursor: pointer;
+    text-align: center;
 }
 
-.project-card p{
-    margin-left:0;
+.project-card p {
+    margin-left: 0;
     cursor: pointer;
+    text-align: center;
 }
 
-.project-card p.date{
+.project-card p.date {
     margin-top: 0px;
     margin-bottom: 5px;
     font-size: 0.9em;
     font-style: italic;
     color: #C0C0C0;
+    align-self: center;
+    justify-self: end;
 }
 
-.project-card p.desc{
+.project-card p.desc {
     margin-top: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     font-size: 1.1em;
     font-weight: 150;
     line-height: 1.2;
@@ -432,6 +449,14 @@ section{
 .project-card.active .card-content {
     filter: blur(5px);
     transition: filter 0.3s ease;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
 }
 
 .card-content img {
@@ -443,6 +468,20 @@ section{
     cursor: pointer;
 }
 
+/* Les nouveaux conteneurs */
+.card-image-wrapper {
+    flex-shrink: 0;
+}
+
+.card-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    margin-bottom:10px;
+}
+
+/* Restauration du hover */
 .project-card:hover {
     transform: scale(1.05);
     z-index: 5;
@@ -454,20 +493,19 @@ section{
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Adapte à la hauteur de la carte */
+    height: 100%; 
     background: rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Positionne la description et le texte en bas */
+    justify-content: space-between;
     padding: 20px;
-    box-sizing: border-box; /* Inclut le padding dans la taille totale */
+    box-sizing: border-box;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease, visibility 0.5s ease;
-    z-index: 1; /* S'assure que l'overlay est au-dessus du contenu */
-    cursor:default;
+    z-index: 1; 
+    cursor: default;
 }
-
 
 .card-overlay h4 {
     margin: 0;
@@ -477,12 +515,13 @@ section{
     font-size: 1.3em;
 }
 
-.card-details p{
+.card-details p {
     font-size: 1em;
     margin-bottom: 5px;
-    margin-top : 5px;
+    margin-top: 5px;
     max-width: 100%;
-    cursor:default;
+    text-align: left;
+    cursor: default;
 }
 
 .card-details {
@@ -497,9 +536,9 @@ section{
 /* Texte en bas de la carte */
 .footer-text {
     margin-top: 20px;
-    margin-bottom:0px !important;
+    margin-bottom: 0px !important;
     font-size: 0.9em !important;
-    text-align: left;
+    text-align: left !important;
 }
 
 /* Style actif de l'overlay (au clic) */
@@ -507,6 +546,7 @@ section{
     opacity: 1;
     visibility: visible;
 }
+
 
 /* ---------- SECTION CONTACT ---------- */
 .contact-content {
@@ -518,7 +558,7 @@ section{
 }
 
 .contact-form {
-    flex: 0 0 55%;
+    flex: 0 0 60%;
     box-sizing: border-box;
 }
 
@@ -547,7 +587,8 @@ section{
 }
 
 .contact-image img {
-    max-width: 400px;
+    max-width: 75%;
+    transition: max-width 0.3s ease;
     border-radius: 10px;
     -webkit-filter: drop-shadow(0 0 10px #ffffff);
     filter: drop-shadow(0 0 10px #ffffff);
@@ -846,11 +887,47 @@ section{
     div#home div#homeImage img{
         width:80%;
     }
+
+    .contact-image img {
+        max-width: 100%;
+        transition: max-width 0.3s ease;
+    }
+
+    .contact-image {
+        width: 25%;
+    }
+
+    .contact-form {
+        width: 75%;
+    }
     
 }
 
 /* Général : Petits écrans (tablettes et téléphones) */
 @media screen and (max-width: 890px) {
+    h3.smallScreen{
+        display: block !important;
+        margin-left: 35px;
+        margin-right:35px;
+    }
+
+    h3.bigScreen{
+        display: none !important;
+    }
+
+    .sectionContent p, .contact-form p{
+        margin: 5px 35px 20px 35px;
+    }
+
+    div.contact-form{
+        padding-right : 35px;
+    }
+
+    #contact-form input,
+    #contact-form textarea {
+        width: 100%;
+    }
+
     header nav.bigScreen, header div.header-right.bigScreen {
         display: none;
     }
@@ -890,8 +967,34 @@ section{
         transition: flex-basis 0.3s ease, max-width 0.3s ease;
     }
 
-    .contact-image img{
+    .contact-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contact-content .contact-form{
+        width: 100%;
+    }
+
+    .contact-image{
         display: none;
+    }
+
+    .skillCards {
+        gap: 15px; 
+    }
+
+    .skillCard {
+        transition: none;
+    }
+
+    .skillCard:hover {
+        scale: 1;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    div.card-details p, div.card-overlay p{
+        margin-left: 0px;
     }
 }
 
@@ -942,4 +1045,112 @@ section{
         display: none;
     }
 
+    .project-grid {
+        display: flex;
+        flex-direction: column; /* Colonne unique */
+        gap: 20px;
+    }
+
+    .project-card {
+        display: flex;
+        flex-direction: row; /* Disposition horizontale pour l'image et le texte */
+        align-items: center;
+        padding: 15px;
+        border-radius: 15px;
+        background-color: #2C2C34;
+        position: relative;
+        height: auto !important; /* Ajuste la hauteur selon le contenu */
+        gap: 10px; /* Espacement entre l'image et le contenu */
+    }
+
+    .card-image-wrapper {
+        width: 65px; /* Largeur fixe pour l'image */
+        height: auto;
+        flex-shrink: 0; /* Empêche l'image de rétrécir */
+    }
+
+    .card-image-wrapper img {
+        width: 100%; /* Prend la totalité de la largeur du conteneur */
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover;
+        margin-bottom : 0px;
+    }
+
+    .card-text-wrapper {
+        display: flex;
+        flex-direction: column; /* Organiser le texte en colonne */
+        justify-content: space-between;
+        align-content: space-between;
+        width: calc(100% - 120px); /* Ajuste la largeur du texte par rapport à l'image */
+        margin-bottom:0px;
+    }
+
+    .card-text-wrapper h3 {
+        font-size: 1.2rem !important;
+        font-weight: 500;
+        margin: 0;
+        text-align: left;
+    }
+
+    .card-text-wrapper p {
+        font-size: 0.9rem !important;
+        color: #C0C0C0;
+        margin-top: 5px;
+        margin-bottom: 0px;
+        margin-left:0px;
+        text-align: left;
+    }
+
+    .project-card h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    .project-card .desc {
+        margin-top: 10px; /* Espace entre le titre et la description */
+        font-size: 1rem;
+        color: #C0C0C0;
+    }
+
+    .project-card .date {
+        position: absolute;
+        bottom: 5px;
+        right: -20px;
+        font-size: 0.8em !important;
+        font-style: italic;
+        color: #C0C0C0;
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: row; /* Disposition en ligne pour l'image et le contenu texte */
+        align-items: center;
+        justify-content: start;
+        gap: 15px; /* Espacement entre l'image et le contenu texte */
+        width: 100%;
+    }
+
+    .card-overlay {
+        padding: 10px;
+    }
+
+    .card-overlay h4{
+        font-size: 1rem !important;
+    }
+
+    .card-overlay p {
+        font-size: 0.8rem !important;
+    }
+
+    .footer-text {
+        display:none;    
+    }
+
+    section{
+        margin-bottom: 10px;
+    }
+
+    section
 }
