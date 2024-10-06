@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             closedDescription: "Analyse d'une DB contenant des informations sur les passagers du Titanic.",
             openDescription: "Projet dans le cadre des études. Analyse d'une BD pour comprendre les facteurs qui ont influencé la survie des passagers du Titanic, grâce à des commandes SQL.",
             footerText: "Compétences renforcées : SQL, analyse de données, travail d'équipe",
-            icon: "../assets/icons/boatEmoji.png"
+            icon: "/assets/icons/boatEmoji.png"
         },
         {
             title: "Site web pour ESN",
@@ -23,9 +23,16 @@ document.addEventListener('DOMContentLoaded', () => {
             closedDescription: "Développement du site web d'une ESN visant à mettre en avant l'entreprise.",
             openDescription: "Projet dans le cadre des études. Conception et réal. d'un site web pour une ESN, destiné à la génération Alpha dans le but de promouvoir l'entreprise et ses valeurs.",
             footerText: "Compéétences renforcées : HTML, CSS, Conception web",
-            icon: "../assets/icons/globeEmoji.png"
+            icon: "/assets/icons/globeEmoji.png"
         },
-        // Ajoutez d'autres projets ici
+        {
+            title: "Programme de classification Java",
+            date: "2024-01-01",
+            closedDescription: "Développement du site web d'une ESN visant à mettre en avant l'entreprise.",
+            openDescription: "Projet dans le cadre des études. Conception et réal. d'un site web pour une ESN, destiné à la génération Alpha dans le but de promouvoir l'entreprise et ses valeurs.",
+            footerText: "Compéétences renforcées : HTML, CSS, Conception web",
+            icon: "/assets/icons/globeEmoji.png"
+        },
     ];
 
     const projectCardsContainer = document.getElementById('project-cards');
