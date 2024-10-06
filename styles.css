@@ -21,6 +21,12 @@ p, ul, li{
     font-weight: 400;
 }
 
+.no-scroll {
+    overflow: hidden !important;
+}
+
+
+
 
 /* ---------- HEADER ---------- */
 
@@ -48,27 +54,34 @@ header.scrolled {
 nav {
     display: flex;
     align-items: center;
+    margin-left: -70px;
     transition: margin-left 0.5s ease;
 }
 
-nav img {
-    position: absolute;
-    left: 50px; 
+nav a img {
+    visibility: hidden;
+    position: relative; 
     opacity: 0;
     width: auto;
     height: 50px;
-    margin-right: 30px;
-    transform: translateX(-70px); /* Cache l'image à gauche */
+    margin-right: 10px;
+    transform: translateX(-70px);
     transition: opacity 0.5s ease, transform 0.5s ease;
+    cursor: default;
+    pointer-events: none;
 }
+
+header.scrolled nav a img {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+    cursor: pointer;
+}
+
 
 header.scrolled nav{
-    margin-left: 80px;
-}
-
-header.scrolled nav img {
-    opacity: 1;
-    transform: translateX(0); /* Fait glisser l'image vers la droite */
+    margin-left: 0px;
 }
 
 nav a {
@@ -82,6 +95,13 @@ nav a {
 nav a:hover {
     color: #ff6404;
 }
+
+header:not(.scrolled) nav a img {
+    visibility: visible;
+    opacity: 0;
+    transform: translateX(-100px); /* Translate encore plus à gauche */
+}
+
 
 header div.header-right {
     display: flex;
@@ -345,4 +365,130 @@ section{
 .skillCard:hover {
     scale:1.1;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ---------- PROJETS ---------- */
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card {
+    flex: 1 1 calc(30% - 20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #2C2C34;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Évite le débordement */
+    transition: transform 0.3s ease; /* Animation pour le hover */
+}
+
+.project-card h3{
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.project-card p{
+    margin-left:0;
+}
+
+.project-card p.date{
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    font-style: italic;
+    color: #C0C0C0;
+}
+
+.project-card p.desc{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 1.1em;
+    font-weight: 150;
+    line-height: 1.2;
+}
+
+/* Applique un flou seulement sur les éléments internes, pas sur l'overlay */
+.project-card.active .card-content {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+
+/* Conteneur de l'image et du titre */
+.card-content img {
+    height: 70px;
+    width: auto;
+    object-fit: cover;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+/* Effet de survol */
+.project-card:hover {
+    transform: scale(1.02);
+}
+
+/* Conteneur de l'overlay */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Adapte à la hauteur de la carte */
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Positionne la description et le texte en bas */
+    padding: 20px;
+    box-sizing: border-box; /* Inclut le padding dans la taille totale */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 1; /* S'assure que l'overlay est au-dessus du contenu */
+}
+
+/* Titre en haut à gauche */
+.card-overlay h4 {
+    margin: 0;
+    align-self: flex-start;
+    color: #EBF5EE;
+    text-align: left;
+    font-size: 1.3em;
+}
+
+.card-details p{
+    font-size: 1em;
+    margin-bottom: 5px;
+    margin-top : 5px;
+    max-width: 100%;
+}
+
+/* Détails de la carte (description) */
+.card-details {
+    flex: 1 1 60%; /* Prend 60% de la hauteur */
+    color: #EBF5EE;
+    text-align: left; /* Aligne le texte à gauche */
+    display: flex;
+    align-items: center; /* Centre verticalement le contenu */
+    justify-content: left;
+}
+
+/* Texte en bas de la carte */
+.footer-text {
+    margin-top: 20px;
+    margin-bottom:0px !important;
+    font-size: 0.9em !important;
+    text-align: left;
+}
+
+/* Style actif de l'overlay (au clic) */
+.project-card.active .card-overlay {
+    opacity: 1;
+    visibility: visible;
 }

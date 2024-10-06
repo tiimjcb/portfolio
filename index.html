@@ -14,7 +14,9 @@
 <body>
     <header>
         <nav>
-        <img src="assets/img/memoji.png" alt="Logo">
+            <a href="#hello"> <!-- Ajout du lien -->
+                <img src="assets/img/memoji.png" alt="Logo">
+            </a>
             <a href="#presentation">Présentation</a>
             <a href="#competences">Compétences</a>
             <a href="#projets">Projets</a>
@@ -158,10 +160,10 @@
                 <hr>
             </div>
             <div class="sectionContent">
-                <h3 class="revealL">> Mes projets personnels</h3>
-                <p class="revealLwD">
-
-                </p>
+                <p class="revealL">Voici une liste de tous mes projets. Cliquez pour en savoir plus.</p>
+                <div id="project-cards" class="project-grid revealB">
+                    <!-- Projets générés dynamiquement -->
+                </div>
             </div>
         </section>
 
@@ -180,6 +182,7 @@
     <footer>
         <p>Timothé Jacob - 2024</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="./assets/javascript/main.js"></script>
+    <script src="./assets/javascript/projets.js"></script>
 </body>
 </html>
