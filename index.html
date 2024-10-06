@@ -13,8 +13,8 @@
 </head>
 <body>
     <header>
-        <nav>
-            <a href="#hello"> <!-- Ajout du lien -->
+        <nav class="bigScreen">
+            <a href="#hello">
                 <img src="assets/img/memoji.png" alt="Memoji derrière un PC">
             </a>
             <a href="#presentation">Présentation</a>
@@ -22,15 +22,50 @@
             <a href="#projets">Projets</a>
             <a href="#contact">Contact</a>
         </nav>
-        <div class="header-right">
+        <div class="header-right bigScreen">
                 <button onclick="window.open('https://github.com/tiimjcb', '_blank')" class="btn-icon">
                     <img src="assets/icons/github-mark-white.svg" alt="GitHub">
                 </button>
                 <button onclick="window.open('https://www.linkedin.com/in/tiimjcb', '_blank')" class="btn-icon">
                     <img src="assets/icons/linkedin.svg" alt="LinkedIn">
                 </button>
-                <button onclick="window.location.href='assets/cv.pdf'" class="btn-orange">Télécharger mon CV</button>
+                <button onclick="window.location.href='assets/files/cv.pdf'" class="btn-orange">Télécharger mon CV</button>
         </div>
+
+        <div class="header-left smallScreen">
+            <h1>Portfolio de Tim</h1>
+        </div>
+        <nav class="smallScreen">
+            <button id="menu-toggle" class="hamburger hamburger--squeeze" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+            <!-- Menu Overlay (fenêtre pop-up) -->
+            <div id="overlay-menu" class="overlay-menu">
+                <div class="overlay-content">
+                    <!-- Liens de navigation -->
+                    <a href="#presentation">Présentation</a>
+                    <hr>
+                    <a href="#competences">Compétences</a>
+                    <hr>
+                    <a href="#projets">Projets</a>
+                    <hr>
+                    <a href="#contact">Contact</a>
+                    <!-- Grille de boutons en bas -->
+                    <div class="menu-grid">
+                        <button onclick="window.open('https://github.com/tiimjcb', '_blank')" class="btn-icon github-btn">
+                            <img src="assets/icons/github-mark-white.svg" alt="GitHub">
+                        </button>
+                        <button onclick="window.open('https://www.linkedin.com/in/tiimjcb', '_blank')" class="btn-icon linkedin-btn">
+                            <img src="assets/icons/linkedin.svg" alt="LinkedIn">
+                        </button>
+                        <button onclick="window.location.href='assets/files/cv.pdf'" class="btn-orange">Télécharger mon CV</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
     </header>
     <main>
         <div id="home">
@@ -39,7 +74,8 @@
             </div>
             <div id="homeText" class="revealRwD">
                 <h1 id="hello">Bonjour !</h1>
-                <h2>> Je m'appelle Tim !</h2>
+                <h2 class="bigScreen">> Je m'appelle Tim !</h2>
+                <h2 class="smallScreen">Je m'appelle Tim !</h2>
                 <p>
                     Étudiant passioné par l'informatique, j'explore le vaste monde du développement en quête de nouvelles connaissances et compétences.
                 </p>

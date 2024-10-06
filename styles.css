@@ -46,14 +46,18 @@ header.scrolled {
     padding: 15px 40px;
 }
 
-nav {
+nav.smallScreen, div.header-left.smallScreen {
+    display: none;
+}
+
+nav.bigScreen {
     display: flex;
     align-items: center;
     margin-left: -70px;
     transition: margin-left 0.5s ease;
 }
 
-nav a img {
+nav.bigScreen a img {
     visibility: hidden;
     position: relative; 
     opacity: 0;
@@ -79,7 +83,7 @@ header.scrolled nav{
     margin-left: 0px;
 }
 
-nav a {
+nav.bigScreen a {
     color: #EBF5EE;
     text-decoration: none;
     margin-right: 20px;
@@ -87,23 +91,23 @@ nav a {
     transition: color 0.2s ease;
 }
 
-nav a:hover {
+nav.bigScreen a:hover {
     color: #ff6404;
 }
 
-header:not(.scrolled) nav a img {
+header:not(.scrolled) nav.bigScreen a img {
     visibility: visible;
     opacity: 0;
     transform: translateX(-100px); /* Translate encore plus à gauche */
 }
 
 
-header div.header-right {
+header div.header-right.bigScreen {
     display: flex;
     align-items: center;
 }
 
-header div.header-right button {
+header div.header-right.bigScreen button {
     margin-left: 10px; 
     color: #EBF5EE;
     text-decoration: none;
@@ -120,12 +124,12 @@ header div.header-right button {
     cursor: pointer;
 }
 
-header div.header-right button img {
+header div.header-right.bigScreen button img {
     width: 28px; 
     height: 28px;
 }
 
-header div.header-right button.btn-orange {
+header div.header-right.bigScreen button.btn-orange {
   background: linear-gradient(to bottom right, #EF4765, #ff6404);
   border: 0;
   border-radius: 12px;
@@ -148,19 +152,19 @@ header div.header-right button.btn-orange {
   margin-left: 20px;
 }
 
-header div.header-right button.btn-orange:not([disabled]):focus {
+header div.header-right.bigScreen button.btn-orange:not([disabled]):focus {
   box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
 }
 
-header div.header-right button.btn-orange:not([disabled]):hover {
+header div.header-right.bigScreen button.btn-orange:not([disabled]):hover {
   box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
 }
 
-header div.header-right button:not([disabled]):focus {
+header div.header-right.bigScreen button:not([disabled]):focus {
     box-shadow: 0 0 .3rem rgba(0, 0, 0, 0.3), -.15rem -.15rem 1rem rgba(255, 255, 255, 0.3), .15rem .15rem 1rem rgba(255, 255, 255, 0.3);
 }
 
-header div.header-right button:not([disabled]):hover {
+header div.header-right.bigScreen button:not([disabled]):hover {
     box-shadow: 0 0 .3rem rgba(0, 0, 0, 0.3), -.15rem -.15rem 1rem rgba(255, 255, 255, 0.3), .15rem .15rem 1rem rgba(255, 255, 255, 0.3);
 }
 
@@ -168,6 +172,7 @@ header div.header-right button:not([disabled]):hover {
 
 main{
     margin:0% 10%;
+    transition : margin 0.5s ease;
 }
 
 /* ---------- HOME ---------- */
@@ -187,11 +192,16 @@ div#home div#homeText {
 }
 
 div#home div#homeImage {
-    padding: 80px 180px 120px 0px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-top : 50px;
+    padding-left : 20px;
 }
 
 div#home div#homeImage img {
-    width: 100%;
+    width: 60%;
+    transition: width 0.3s ease;
     height: auto;
     object-fit: cover;
     border-radius: 10px;
@@ -213,6 +223,8 @@ div#home div#homeText h1 {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    transition: font-size 0.3s ease;
+
 }
 
 @keyframes gradientAnimation {
@@ -226,14 +238,20 @@ div#home div#homeText h2 {
     font-size: 2rem;
     font-weight: 400;
     margin-top: 0px;
+    transition: font-size 0.3s ease;
+}
+
+div#home div#homeText h2.smallScreen {
+    display: none;
 }
 
 div#home div#homeText p {
     font-size: 1.5rem;
     font-weight: 250;
     margin-top: 0px;
-}
+    transition: font-size 0.3s ease;
 
+}
 /* ---------- SECTIONS ---------- */
 
 .sectionHeader{
@@ -620,4 +638,308 @@ section{
 
 .back-to-top:hover {
     color: #EF4765;
+}
+
+
+
+/* ---------- HAMBURGER MENU ---------- */
+.hamburger {
+    padding: 15px;
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+}
+
+.hamburger-box {
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background-color: #EBF5EE; /* Couleur des lignes */
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: "";
+    display: block;
+}
+
+.hamburger-inner::before {
+    top: -10px;
+}
+
+.hamburger-inner::after {
+    bottom: -10px;
+}
+
+/* Animation "Squeeze" */
+.hamburger--squeeze .hamburger-inner {
+    transition-duration: 0.075s;
+}
+
+.hamburger--squeeze .hamburger-inner::before {
+    transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+}
+
+.hamburger--squeeze .hamburger-inner::after {
+    transition: bottom 0.075s 0.12s ease,
+    transform 0.075s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--squeeze.is-active .hamburger-inner {
+    transform: rotate(45deg);
+    transition-delay: 0.12s;
+}
+
+.hamburger--squeeze.is-active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+}
+
+.hamburger--squeeze.is-active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.075s ease,
+    transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* ---------- OVERLAY MENU ---------- */
+.overlay-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 250px;
+    background: rgba(35, 35, 35, 0.489);
+    box-shadow: 0 8px 32px 0 rgba(42, 42, 42, 0.37);
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 8.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 20px;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transform: translateY(-20px);
+    padding: 15px;
+}
+
+/* Affiche le menu lorsque le bouton est activé */
+.overlay-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.overlay-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+}
+
+/* Liens de navigation */
+.overlay-content a {
+    color: #EBF5EE;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.overlay-content a:hover {
+    color: #ff6404;
+}
+
+/* Séparateurs */
+.overlay-content hr {
+    width: 50%;
+    margin: 0 auto;
+    border: 0;
+    border-top: 1px solid #444;
+}
+
+/* Grille de boutons en bas du menu */
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+/* Boutons GitHub et LinkedIn */
+.btn-icon {
+    width: 100%;
+    padding: 8px;
+    border-radius: 12px;
+    background-color: #3A3A42;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: box-shadow 0.2s ease-in-out;
+    box-shadow: inset 0 0 10px rgba(43, 43, 43, 0.5);
+}
+
+.btn-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Bouton GitHub */
+.github-btn {
+    background-color: #333;
+}
+
+/* Bouton LinkedIn */
+.linkedin-btn {
+    background-color: #0077b5;
+}
+
+/* Bouton CV */
+.menu-grid .btn-orange {
+    grid-column: span 2;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 12px;
+    background: linear-gradient(to bottom right, #EF4765, #ff6404);
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in-out;
+    font-family: 'Gabarito', sans-serif;
+    font-size: 1rem;
+    box-shadow: 0 0 10px rgba(255, 100, 4, 0.5);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media screen and (max-width:1000px) {
+    div#home div#homeImage img{
+        width:80%;
+    }
+    
+}
+
+/* Général : Petits écrans (tablettes et téléphones) */
+@media screen and (max-width: 890px) {
+    header nav.bigScreen, header div.header-right.bigScreen {
+        display: none;
+    }
+
+    header nav.smallScreen, header div.header-left.smallScreen {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    header div.header-left.smallScreen h1 {
+        font-weight: 450;
+        font-size: 2em;
+        margin: 10px;
+    }
+    div#home {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div#home div#homeImage {
+        flex-shrink: 1;
+    }
+
+    div#home div#homeImage img {
+        padding: 0px;
+    }
+
+    div#home div#homeText {
+        padding-left:0px;
+        flex-shrink: 0;
+        flex-basis: 50%;
+        max-width: 80%;
+        transition: flex-basis 0.3s ease, max-width 0.3s ease;
+    }
+
+    .contact-image img{
+        display: none;
+    }
+}
+
+
+@media screen and (max-width:800px){
+    div#home div#homeText h1 {
+        font-size: 4rem;
+        transition: font-size 0.3s ease;
+    }
+
+    div#home div#homeText h2 {
+        font-size: 1.65rem;
+        transition: font-size 0.3s ease;
+    }
+
+    div#home div#homeText p {
+        font-size: 1.4rem;
+        transition: font-size 0.3s ease;
+    }
+    main{
+        margin:0% 5%;
+        transition : margin 0.5s ease;
+    }
+}
+
+@media screen and (max-width:650px){
+    div#home{
+        flex-direction: column;
+    }
+
+    div#home div#homeImage{
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        width: 50%;
+    }
+
+    div#home div#homeText{
+        width:80%;
+        text-align: center;
+    }
+
+    div#home div#homeText h2.smallScreen {
+        display: block;
+    }
+
+    div#home div#homeText h2.bigScreen {
+        display: none;
+    }
+
 }

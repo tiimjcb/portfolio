@@ -198,3 +198,34 @@ document.addEventListener('DOMContentLoaded', updateAge);
 
 /* --------- Main --------- */
 updateHello();
+
+/* --------- Menu mobile --------- */
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const overlayMenu = document.getElementById('overlay-menu');
+
+    // Gestion du clic sur le menu hamburger
+    menuToggle.addEventListener('click', () => {
+        // Utilise un délai pour s'assurer que l'overlay est prêt à être rouvert
+        setTimeout(() => {
+            overlayMenu.classList.toggle('active');
+        }, 50);
+    });
+
+    // Ferme le menu lorsque l'on clique sur un lien ou un bouton dans l'overlay
+    const overlayLinks = overlayMenu.querySelectorAll('a, button');
+    overlayLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            setTimeout(() => {
+                overlayMenu.classList.remove('active');
+            }, 50);
+        });
+    });
+
+    // Ferme le menu si on clique en dehors du pop-up
+    document.addEventListener('click', (event) => {
+        if (!overlayMenu.contains(event.target) && event.target !== menuToggle) {
+            overlayMenu.classList.remove('active');
+        }
+    });
+});
