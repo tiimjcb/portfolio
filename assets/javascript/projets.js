@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Sélectionner le conteneur des cartes de projet
     const projectCardsContainer = document.getElementById('project-cards');
-
-    // Détecter si le site est hébergé sur GitHub Pages
     const isGithubPages = window.location.hostname.includes('github.io');
     
     // Tableau des projets avec des variables distinctes pour les descriptions
@@ -73,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     ];
 
-    // Fonction pour formater les dates en "Mois Année"
+    // Fonction pour formater les dates
     function formatDate(dateString) {
         const options = { year: 'numeric', month: 'long' };
         const date = new Date(dateString);
@@ -84,9 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Trier les projets par date décroissante
     projects.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    // Crée les cartes de projet
+    // Pour créer les cartes de projet
     projects.forEach((project) => {
-        // Créer la propriété githubAbsoluteLink en fonction de la détection de GitHub Pages
+        // Nécéssaire sinon ca déconne avec GitHub Pages
         const iconPath = isGithubPages ? `/portfolio2.0${project.icon}` : project.icon;
 
         const card = document.createElement('div');

@@ -387,10 +387,12 @@ section{
     margin-bottom: 5px;
     font-size: 1.5em;
     font-weight: 400;
+    cursor: pointer;
 }
 
 .project-card p{
     margin-left:0;
+    cursor: pointer;
 }
 
 .project-card p.date{
@@ -420,10 +422,13 @@ section{
     object-fit: cover;
     margin-bottom: 10px;
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    cursor: pointer;
 }
 
 .project-card:hover {
-    transform: scale(1.02);
+    transform: scale(1.05);
+    z-index: 5;
+    cursor: pointer;
 }
 
 .card-overlay {
@@ -442,6 +447,7 @@ section{
     visibility: hidden;
     transition: opacity 0.5s ease, visibility 0.5s ease;
     z-index: 1; /* S'assure que l'overlay est au-dessus du contenu */
+    cursor:default;
 }
 
 
@@ -458,6 +464,7 @@ section{
     margin-bottom: 5px;
     margin-top : 5px;
     max-width: 100%;
+    cursor:default;
 }
 
 .card-details {
@@ -585,3 +592,32 @@ section{
     box-shadow: 0 0 10px rgba(255, 100, 4, 0.5);
 }
 
+/* ---------- FOOTER ---------- */
+#footer {
+    background-color: #2C2C34;
+    color: #EBF5EE;
+    padding: 20px 5%;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.back-to-top {
+    color: #ff6404;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.back-to-top:hover {
+    color: #EF4765;
+}

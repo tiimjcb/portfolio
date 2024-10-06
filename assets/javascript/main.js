@@ -161,5 +161,40 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+/* --------- Date de dernière mise à jour --------- */
+document.addEventListener('DOMContentLoaded', () => {
+    const lastUpdatedElement = document.getElementById('last-updated');
+    const lastUpdatedDate = new Date(document.lastModified);
+    lastUpdatedElement.textContent = lastUpdatedDate.toLocaleDateString('fr-FR', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+
+    const backToTopLink = document.querySelector('.back-to-top');
+    backToTopLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
+
+/* --------- Age --------- */
+function updateAge() {
+    const birthDate = new Date('2005-09-14');
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDifference = today.getMonth() - birthDate.getMonth();
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    const ageElement = document.getElementById('age');
+    ageElement.textContent = age;
+}
+
+document.addEventListener('DOMContentLoaded', updateAge);
+
 /* --------- Main --------- */
 updateHello();
