@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             closedDescription: "Installation de systèmes domotiques compatibles avec le protocole HomeKit.",
             openDescription: "Réalisation de multiples installations domotiques pour contrôler les appareils de la maison à l'aide de l'application Maison d'Apple, grâce au programme open-source Homebridge.",
             footerText: "Compétences renforcées : Linux, NodeJS, protocoles réseaux",
-            icon: "../assets/icons/homekit.png"
+            icon: "/assets/icons/homekit.png"
         },
         {
             title: "Analyse base de données",
@@ -38,6 +38,22 @@ document.addEventListener('DOMContentLoaded', () => {
             openDescription: "Projet dans le cadre des études. Développement d'un programme de classification de dépêches en Java, utilisant des algorithmes de machine learning pour prédire la catégorie d'une dépêche.",
             footerText: "Compétences renforcées : Java",
             icon: "/assets/icons/journalEmoji.png"
+        },
+        {
+            title: "Pwnagotchi",
+            date: "2024-03-01",
+            closedDescription: "Création d'un Pwnagotchi pour apprendre les bases de la sécurité des réseaux.",
+            openDescription: "Création d'un Pwnagotchi, dispositif basé sur un Raspberry Zero interceptant les handshakes Wi-Fi : une manière ludique d'apprendre le fonctionnement d'un réseau Wi-Fi et les bases de la sécurité.",
+            footerText: "Compétences renforcées : Réseaux, Linux, Python",
+            icon: "/assets/icons/pwnagotchi.png"
+        },
+        {
+            title: "Tri base de données",
+            date: "2024-04-01",
+            closedDescription: "Tri d'une BD répertoriant des infos. sur le Nutri-Score des produits alimentaires.",
+            openDescription: "Tri et rédaction d'un rapport sur une BD contenant des infos. relatives au Nutri-Score de denrées alimentaires, afin d'en comprendre son fonctionnement et ses failles.",
+            footerText: "Compétences renforcées : SQL, Analyse de données, RMD",
+            icon: "/assets/icons/barchartEmoji.png"
         },
     ];
 
