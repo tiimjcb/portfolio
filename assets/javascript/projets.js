@@ -8,26 +8,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Tableau des projets avec des variables distinctes pour les descriptions
     const projects = [
         {
-            title: "Installation domotique",
+            title: "Installations domotiques",
             date: "2022-07-01",
-            closedDescription: "Installation rapide de systèmes domotiques.",
-            openDescription: "Détails complets du projet 1.",
-            footerText: "Texte en bas de la carte pour le projet 1.",
-            icon: "/assets/icons/homekit.png"
+            closedDescription: "Installation de systèmes domotiques compatibles avec le protocole HomeKit.",
+            openDescription: "Réalisation de multiples installations domotiques pour contrôler les appareils de la maison à l'aide de l'application Maison d'Apple, grâce au programme open-source Homebridge.",
+            footerText: "Compétences renforcées : Linux, NodeJS, protocoles réseaux",
+            icon: "../assets/icons/homekit.png"
         },
         {
-            title: "Projet 2",
-            date: "2023-02-01",
-            closedDescription: "Brève description du projet 2.",
-            openDescription: "Détails complets du projet 2.",
-            footerText: "Texte en bas de la carte pour le projet 2.",
+            title: "Analyse base de données",
+            date: "2024-01-01",
+            closedDescription: "Analyse d'une DB contenant des informations sur les passagers du Titanic.",
+            openDescription: "Projet dans le cadre des études. Analyse d'une BD pour comprendre les facteurs qui ont influencé la survie des passagers du Titanic, grâce à des commandes SQL.",
+            footerText: "Compétences renforcées : SQL, analyse de données, travail d'équipe",
             icon: "/assets/icons/boatEmoji.png"
         },
         {
             title: "Site web pour ESN",
             date: "2024-01-01",
             closedDescription: "Développement du site web d'une ESN visant à mettre en avant l'entreprise.",
-            openDescription: "Projet dans le cadre des études. Conception et réalisation d'un site web pour une ESN.",
+            openDescription: "Projet dans le cadre des études. Conception et réal. d'un site web pour une ESN, destiné à la génération Alpha dans le but de promouvoir l'entreprise et ses valeurs.",
             footerText: "Compétences renforcées : HTML, CSS, Conception web",
             icon: "/assets/icons/globeEmoji.png"
         },
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Programme de classification Java",
             date: "2024-02-01",
             closedDescription: "Développement d'un programme de classification de dépêches en Java.",
-            openDescription: "Projet dans le cadre des études. Utilisation d'algorithmes de machine learning pour prédire la catégorie d'une dépêche.",
+            openDescription: "Projet dans le cadre des études. Développement d'un programme de classification de dépêches en Java, utilisant des algorithmes de machine learning pour prédire la catégorie d'une dépêche.",
             footerText: "Compétences renforcées : Java",
             icon: "/assets/icons/journalEmoji.png"
         },
