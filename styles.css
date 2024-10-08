@@ -25,6 +25,10 @@ p, ul, li{
     font-weight: 400;
 }
 
+img{
+    user-select: none !important;
+}
+
 
 
 /* ---------- HEADER ---------- */
@@ -366,9 +370,10 @@ section{
     box-sizing: border-box;
 }
 
-.skillCard img {
+.skillCard {
     width: auto;
     height: 50px;
+    user-select: none;
     margin-bottom: 10px;
 }
 
