@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const projectCardsContainer = document.getElementById('project-cards');
-    const isGithubPages = window.location.hostname.includes('github.io');
-    
+    const isGithubPages = window.location.hostname.includes('.io');
+
     // Tableau des projets avec des variables distinctes pour les descriptions
     const projects = [
         {
+            id: "project1",
             title: "Installations domotiques",
             date: "2022-07-01",
             closedDescription: "Installation de systèmes domotiques compatibles avec le protocole HomeKit.",
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             icon: "/assets/icons/homekit.png"
         },
         {
+            id: "project2",
             title: "Analyse base de données",
             date: "2024-01-01",
             closedDescription: "Analyse d'une DB contenant des informations sur les passagers du Titanic.",
@@ -21,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             icon: "/assets/icons/boatEmoji.png"
         },
         {
+            id: "project3",
             title: "Site web pour ESN",
             date: "2024-01-01",
             closedDescription: "Développement du site web d'une ESN visant à mettre en avant l'entreprise.",
@@ -29,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             icon: "/assets/icons/globeEmoji.png"
         },
         {
+            id: "project4",
             title: "App. de classification Java",
             date: "2024-02-01",
             closedDescription: "Développement d'un programme de classification de dépêches en Java.",
@@ -37,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             icon: "/assets/icons/journalEmoji.png"
         },
         {
+            id: "project5",
             title: "Pwnagotchi",
             date: "2024-03-01",
             closedDescription: "Création d'un Pwnagotchi pour apprendre les bases de la sécurité des réseaux.",
@@ -45,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             icon: "/assets/icons/pwnagotchi.png"
         },
         {
+            id: "project6",
             title: "Tri base de données",
             date: "2024-04-01",
             closedDescription: "Tri d'une BD répertoriant des infos. sur le Nutri-Score des produits alimentaires.",
@@ -53,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             icon: "/assets/icons/barchartEmoji.png"
         },
         {
+            id: "project7",
             title: "Installation serveur Debian",
             date: "2024-05-01",
             closedDescription: "Installation d'un serveur Debian avec outils basiques.",
@@ -61,35 +68,30 @@ document.addEventListener('DOMContentLoaded', () => {
             icon: "/assets/icons/tux.png"
         },
         {
+            id: "project8",
             title: "App. de gestion d'évènements",
             date: "2024-06-01",
             closedDescription: "Développement d'une app. de gestion d'évènements avec interface graphique.",
             openDescription: "Projet dans le cadre des études. Développement d'une application de gestion d'évènements en Java, avec interface graphique, permettant de gérer des évènements et des participants.",
             footerText: "Compétences renforcées : JavaFX, Leadership, Gestion de projet",
             icon: "/assets/icons/partyEmoji.png"
-        },
+        }
     ];
-
-    // Fonction pour formater les dates
-    function formatDate(dateString) {
-        const options = { year: 'numeric', month: 'long' };
-        const date = new Date(dateString);
-        const formattedDate = date.toLocaleDateString('fr-FR', options);
-        return formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1);
-    }
 
     // Trier les projets par date décroissante
     projects.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    // Pour créer les cartes de projet
+    // Stockage de la hauteur initiale de chaque carte
+    const initialHeights = {};
+
+    // Créer les cartes des projets
     projects.forEach((project) => {
-        // Nécessaire sinon ça déconne avec GitHub Pages
         const iconPath = isGithubPages ? `/portfolio${project.icon}` : project.icon;
 
         const card = document.createElement('div');
         card.className = 'project-card';
-        
-        // Création du conteneur pour la nouvelle disposition
+        card.setAttribute('id', project.id); // Ajout d'un ID unique pour chaque projet
+
         card.innerHTML = `
             <div class="card-content">
                 <div class="card-image-wrapper">
@@ -110,35 +112,66 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        // Ajoute la carte au conteneur
         projectCardsContainer.appendChild(card);
+
+        const cardContent = card.querySelector('.card-content');
+        cardContent.style.height = 'auto';
+
+        // Stocker la hauteur initiale de chaque carte
+        initialHeights[project.id] = cardContent.scrollHeight;
 
         // Gestion du clic pour afficher l'overlay
         card.addEventListener('click', (e) => {
-            e.stopPropagation();
-            closeAllCards();
-        
-            card.classList.add('active');
+            if (!card.classList.contains('active')) {
+                e.stopPropagation();
+                closeAllCards();
+            
+                const cardOverlay = card.querySelector('.card-overlay');
+                
+                // Si la largeur de l'écran est <= 650px, on fait l'animation de hauteur
+                if (window.innerWidth <= 650) {
+                    cardContent.style.height = `${initialHeights[project.id]}px`;
+                    cardContent.offsetHeight; // Forcer le recalcul de la mise en page
 
-            // Ajuster la hauteur de .card-content en fonction de .card-overlay
-            const cardContent = card.querySelector('.card-content');
-            const cardOverlay = card.querySelector('.card-overlay');
-            cardContent.style.height = `${cardOverlay.scrollHeight}px`;
+                    requestAnimationFrame(() => {
+                        cardContent.style.height = `${cardOverlay.scrollHeight}px`;
+                        card.classList.add('active');
+                    });
+                } else {
+                    // Si l'écran est plus grand, on ne fait que l'effet visuel (flou et overlay)
+                    card.classList.add('active');
+                }
+            } else {
+                closeCard(card, project.id);
+            }
         });
     });
 
+    // Fermer une carte spécifique
+    function closeCard(card, projectId) {
+        const cardContent = card.querySelector('.card-content');
+        card.classList.remove('active');
+        cardContent.style.height = `${initialHeights[projectId]}px`; // Restaurer la hauteur initiale uniquement pour les petits écrans
+    }
+
+    // Fermer toutes les cartes
     function closeAllCards() {
         document.querySelectorAll('.project-card.active').forEach(card => {
-            card.classList.remove('active');
-    
-            // Réinitialise la hauteur de la carte
-            card.querySelector('.card-content').style.height = 'auto'; // Hauteur initiale
+            const cardId = card.getAttribute('id');
+            closeCard(card, cardId);
         });
     }
 
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.project-card')) {
-            closeAllCards(); // Appelle cette fonction pour fermer toutes les cartes
+            closeAllCards(); // Ferme toutes les cartes si on clique ailleurs
         }
     });
+
+    // Fonction pour formater les dates
+    function formatDate(dateString) {
+        const options = { year: 'numeric', month: 'long' };
+        const date = new Date(dateString);
+        return date.toLocaleDateString('fr-FR', options);
+    }
 });

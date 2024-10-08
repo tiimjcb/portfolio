@@ -412,6 +412,7 @@ section{
     height: auto; /* Ou une autre hauteur fixe */
     overflow: hidden; 
     transition: transform 0.3s ease, height 0.3s ease;
+    justify-content: center;
 }
 
 
@@ -451,7 +452,7 @@ section{
 
 .project-card.active .card-content {
     filter: blur(5px);
-    transition: filter 0.3s ease;
+    transition: filter 0.3s ease, height 0.3s ease;
 }
 
 .card-content{
@@ -460,6 +461,8 @@ section{
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    transition: filter 0.3s ease, height 0.3s ease;
+
 }
 
 .card-content img {
@@ -778,7 +781,7 @@ section{
     top: 20px;
     right: 20px;
     width: 250px;
-    background: rgba(35, 35, 35, 0.489);
+    background: rgba(17, 17, 17, 0.771);
     box-shadow: 0 8px 32px 0 rgba(21, 21, 21, 0.37);
     backdrop-filter: blur( 10.5px );
     -webkit-backdrop-filter: blur( 8.5px );
@@ -1128,12 +1131,8 @@ section{
         justify-content: start;
         gap: 15px;
         width: 100%;
-        transition: filter 0.3s ease, height 0.3s ease;
     }
 
-    .project-card.active .card-content {
-        transition: filter 0.3s ease, height 0.3s ease;
-    }
 
     .project-card.active .card-overlay {
         display:flex;
