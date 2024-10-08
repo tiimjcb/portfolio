@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Pour créer les cartes de projet
     projects.forEach((project) => {
-        // Nécéssaire sinon ca déconne avec GitHub Pages
+        // Nécessaire sinon ça déconne avec GitHub Pages
         const iconPath = isGithubPages ? `/portfolio${project.icon}` : project.icon;
 
         const card = document.createElement('div');
@@ -110,38 +110,35 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
+        // Ajoute la carte au conteneur
+        projectCardsContainer.appendChild(card);
+
         // Gestion du clic pour afficher l'overlay
         card.addEventListener('click', (e) => {
             e.stopPropagation();
             closeAllCards();
-
-            // Vérifiez si l'écran est inférieur à 650px
-            if (window.innerWidth < 650) {
-                const cardContent = card.querySelector('.card-content');
-                const cardOverlay = card.querySelector('.card-overlay');
-                
-                // Déplie la carte pour afficher le contenu complet
-                card.style.height = `${cardContent.scrollHeight + cardOverlay.scrollHeight}px`;
-            }
-            
+        
             card.classList.add('active');
-        });
 
-        projectCardsContainer.appendChild(card);
+            // Ajuster la hauteur de .card-content en fonction de .card-overlay
+            const cardContent = card.querySelector('.card-content');
+            const cardOverlay = card.querySelector('.card-overlay');
+            cardContent.style.height = `${cardOverlay.scrollHeight}px`;
+        });
     });
 
     function closeAllCards() {
         document.querySelectorAll('.project-card.active').forEach(card => {
             card.classList.remove('active');
+    
             // Réinitialise la hauteur de la carte
-            card.style.height = '';
+            card.querySelector('.card-content').style.height = 'auto'; // Hauteur initiale
         });
     }
 
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.project-card')) {
-            closeAllCards();
+            closeAllCards(); // Appelle cette fonction pour fermer toutes les cartes
         }
     });
-
 });
