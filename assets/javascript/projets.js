@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
             closedDescription: "Installation d'un serveur Debian avec outils basiques.",
             openDescription: "Projet dans le cadre des études. Installation d'un serveur Debian avec outils basiques (Apache, Postgres) afin d'en rédiger un guide détaillé en Anglais pour des étudiants débutants.",
             footerText: "Compétences renforcées : Linux, Serveurs, Rédaction anglaise",
-            icon: "/assets/icons/tux.png"
+            icon: "/assets/icons/debian.png"
         },
         {
             id: "project8",
@@ -99,9 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="card-text-wrapper">
                     <h3>${project.title}</h3>
+                    <p class="date">${formatDate(project.date)}</p>
                     <p class="desc">${project.closedDescription}</p>
                 </div>
-                <p class="date">${formatDate(project.date)}</p>
             </div>
             <div class="card-overlay">
                 <h4>${project.title}</h4>
@@ -141,8 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Si l'écran est plus grand, on ne fait que l'effet visuel (flou et overlay)
                     card.classList.add('active');
                 }
-            } else {
-                closeCard(card, project.id);
             }
         });
     });
@@ -151,8 +149,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeCard(card, projectId) {
         const cardContent = card.querySelector('.card-content');
         card.classList.remove('active');
-        cardContent.style.height = `${initialHeights[projectId]}px`; // Restaurer la hauteur initiale uniquement pour les petits écrans
+        if (window.innerWidth <= 650){
+            cardContent.style.height = `${initialHeights[projectId]}px`; // Restaurer la hauteur initiale uniquement pour les petits écrans
+        }
     }
+
 
     // Fermer toutes les cartes
     function closeAllCards() {
