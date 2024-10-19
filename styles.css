@@ -25,6 +25,24 @@ p, ul, li{
     font-weight: 400;
 }
 
+div.splitted{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.splittedLeft{
+    width: 65%;
+}
+
+div.splittedRight{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 35%;
+    padding-right:30px;
+}
 
 
 /* ---------- HEADER ---------- */
@@ -126,6 +144,7 @@ header div.header-right.bigScreen button {
     border: 0px;
     transition: box-shadow .2s ease-in-out;
     cursor: pointer;
+    user-select: none;
 }
 
 header div.header-right.bigScreen button img {
@@ -339,6 +358,47 @@ section{
 }
 
 /* ---------- CARTES DES LANGAGES ---------- */
+
+.splittedRight p {
+    font-weight: 400;
+    margin : 0px 10px;
+}
+
+.sortButtons {
+    display: flex;
+    align-items: center;
+}
+
+.btn-sort{
+    padding:10px 15px;
+    border-radius : 0px;
+    font-family: 'Gabarito', sans-serif;
+    font-size: 0.9em;
+    background-color: #3A3A42;
+    color: #EBF5EE;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-sort:first-of-type{
+    border-radius: 10px 0px 0px 10px;
+}
+
+.btn-sort:last-of-type{
+    border-radius: 0px 10px 10px 0px;
+}
+
+.btn-sort.toggled {
+    background-color: #3A3A42;
+    background: linear-gradient(to bottom right, #EF4765, #ff6404);
+    color: #FFFFFF;
+    border: none;
+    box-shadow: 0 0 10px rgba(255, 100, 4, 0.5);
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Transition douce au clic */
+}
+
+
 .skillCards {
     display: flex;
     flex-wrap: wrap;
@@ -358,12 +418,13 @@ section{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 15px;
     transition: scale 0.3s ease, box-shadow 0.3s ease;
     flex: 1 1 auto;
     max-width: calc(35% - 30px); 
-    height: 110px;
+    height: auto;
     box-sizing: border-box;
+    min-width: 110px !important;
 }
 
 .skillCard img {
@@ -378,6 +439,16 @@ section{
     color: #EBF5EE;
     margin: 0;
     cursor:pointer;
+}
+
+.skillCard hr{
+    width: 80%;
+    border: 1px solid #424242;
+    margin: 10px 0px 2px 0px;
+}
+
+.skillCard p{
+    margin : 0px;
 }
 
 .skillCard:hover {
@@ -978,12 +1049,16 @@ section{
 
     .skillCards {
         gap: 15px; 
+        padding-top:15px;
     }
 
     .skillCard {
         transition: none;
     }
 
+    .skillCard p{
+        margin: 0px;
+    }
     .skillCard:hover {
         scale: 1;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -992,6 +1067,26 @@ section{
     div.card-details p, div.card-overlay p{
         margin-left: 0px;
     }
+
+    div.splitted{
+        flex-direction: column;
+        align-items: start;
+        gap:10px;
+    }
+
+    div.splittedRight{
+        width: 100%;
+        justify-content: center;
+    }
+
+    div.splittedRight p{
+        margin:0px 10px 0px 0px;
+    }
+
+    div.splittedLeft{
+        width: 100%;
+    }
+
 }
 
 

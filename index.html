@@ -129,49 +129,19 @@
                     <br>
                     J'ai acquis ces compétences grâce à ma formation, mais aussi par moi-même, grâce à ma curiosité.
                     <br><br>
-                    Je maitrise les <b>langages de programmation</b> et <b>outils</b> suivants :
                 </p>
-                <div class="skillCards revealR">
-                    <a href="https://www.python.org/" class="skillCard">
-                        <img src="assets/icons/python.png" alt="Python">
-                        <h4>Python</h4>
-                    </a>
-                    <a href="https://www.java.com/fr/" class="skillCard">
-                        <img src="assets/icons/java.png" alt="Java">
-                        <h4>Java</h4>
-                    </a>
-                    <a href="https://isocpp.org/" class="skillCard">
-                        <img src="assets/icons/cpp.png" alt="C++">
-                        <h4>C++</h4>
-                    </a>
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" class="skillCard">
-                        <img src="assets/icons/html5.png" alt="HTML5">
-                        <h4>HTML5</h4>
-                    </a>
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" class="skillCard">
-                        <img src="assets/icons/css3.png" alt="CSS3">
-                        <h4>CSS3</h4>
-                    </a>
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" class="skillCard">
-                        <img src="assets/icons/js.png" alt="JavaScript">
-                        <h4>JavaScript</h4>
-                    </a>
-                    <a href="https://www.php.net/" class="skillCard">
-                        <img src="assets/icons/php.png" alt="PHP">
-                        <h4>PHP</h4>
-                    </a>
-                    <a href="https://fr.wikipedia.org/wiki/Structured_Query_Language" class="skillCard">
-                        <img src="assets/icons/sql.png" alt="SQL">
-                        <h4>SQL</h4>
-                    </a>
-                    <a href="https://www.postgresql.org/" class="skillCard">
-                        <img src="assets/icons/postgres.png" alt="PostgreSQL">
-                        <h4>PostgreSQL</h4>
-                    </a>
-                    <a href="https://git-scm.com/" class="skillCard">
-                        <img src="assets/icons/git.png" alt="Git">
-                        <h4>Git</h4>
-                    </a>
+                <div class="splitted">
+                    <div class="splittedLeft">
+                        <p class="revealLwD noMarginBottom">Je maitrise les <b>langages de programmation</b> et <b>outils</b> suivants :</p>
+                    </div>
+                    <div class="splittedRight sortButtons revealR">
+                        <p>Tri :</p>
+                        <button id="sort-by-competence" class="btn-sort toggled">Niveau</button>
+                        <button id="sort-by-name" class="btn-sort">Nom</button>
+                    </div>
+                </div>
+                <div class="skillCards revealB">
+                    <!-- Cartes de compétences générées dynamiquement -->
                 </div>
                 <h3 class="revealL bigScreen">> Mes compétences plus générales</h3>
                 <h3 class="revealL smallScreen">Mes compétences plus générales</h3>
@@ -243,7 +213,7 @@
             <a href="#hello" class="back-to-top">Retour en haut</a>
         </div>
     </footer>
-    
+    <script src="./assets/javascript/skillCards.js"></script>
     <script src="./assets/javascript/main.js"></script>
     <script src="./assets/javascript/projets.js"></script>
 
