@@ -1077,6 +1077,7 @@ section{
     div.splittedRight{
         width: 100%;
         justify-content: center;
+        padding-right : 0px;
     }
 
     div.splittedRight p{
