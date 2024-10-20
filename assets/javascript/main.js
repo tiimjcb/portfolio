@@ -85,6 +85,9 @@ window.addEventListener('scroll', function() {
     }
 });
 
+
+
+/* --------- Animation du texte --------- */
 function updateHello() {
     const now = new Date();
     const hours = now.getHours();

@@ -41,7 +41,7 @@ div.splittedRight{
     flex-direction: row;
     justify-content: flex-end;
     width: 35%;
-    padding-right:30px;
+    margin-right:30px;
     box-sizing: border-box;
 }
 
@@ -57,16 +57,12 @@ header {
     align-items: center;
     padding: 20px 30px;
     position: sticky;
+    height:55px;
     top: 0;
     left: 0;
     width: auto;
     z-index: 1000;
-    transition: box-shadow 0.3s ease, border-bottom 0.3s ease, padding 0.5s ease;
-}
-
-header.scrolled {
-    box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.5);
-    padding: 15px 40px;
+    transition: box-shadow 0.3s ease, border-bottom 0.3s ease, padding 0.5s ease, height 0.5s ease;
 }
 
 nav.smallScreen, div.header-left.smallScreen {
@@ -91,6 +87,13 @@ nav.bigScreen a img {
     transition: opacity 0.5s ease, transform 0.5s ease;
     cursor: default;
     pointer-events: none;
+}
+
+
+header.scrolled {
+    box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.5);
+    padding: 15px 40px;
+    transition:height 0.5s ease;
 }
 
 header.scrolled nav a img {
@@ -422,16 +425,18 @@ section{
     padding: 15px;
     transition: scale 0.3s ease, box-shadow 0.3s ease;
     flex: 1 1 auto;
-    max-width: calc(35% - 30px); 
     height: auto;
     box-sizing: border-box;
-    min-width: 110px !important;
+    width: 120px !important;
+    max-width: 50%;
+    text-decoration: none;
 }
 
 .skillCard img {
     width: auto;
     height: 50px;
     margin-bottom: 10px;
+    max-width: 100%; 
 }
 
 .skillCard h4 {
@@ -452,19 +457,19 @@ section{
     margin : 0px;
 }
 
+.skillCard i {
+    font-size: 14px; 
+    margin-right: 2px;
+}
+
+.skillCard i:last-child {
+    margin-right: 0;
+}
+
+
 .skillCard:hover {
     scale: 1.1;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.skillCard {
-    min-width: fit-content;
-    text-decoration: none;
-
-}
-
-.skillCard img {
-    max-width: 100%; 
 }
 
 
@@ -1003,7 +1008,7 @@ section{
     header nav.smallScreen, header div.header-left.smallScreen {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: start;
         gap: 20px;
     }
 
@@ -1011,7 +1016,44 @@ section{
         font-weight: 450;
         font-size: 2em;
         margin: 10px;
+        
     }
+
+    header:not(.scrolled) div h1 {
+        transform: scale(1);
+        transform-origin: left;
+        transition: transform 0.5s ease;
+    }
+
+    header{
+        transition: height 0.5s ease, padding 0.5s ease;
+    }
+
+    header.scrolled {
+        box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.5);
+        padding: 15px 15px;
+        height:30px;
+        transition:height 0.5s ease, padding 0.5s ease;
+    }
+
+    header.scrolled div.header-left.smallScreen h1 {
+        transform:scale(0.8);
+        transform-origin: left;
+        transition: transform 0.5s ease;   
+    }
+
+    header.scrolled nav.smallScreen button{
+        transform : scale(0.8);
+        transition: transform 0.5s ease;
+        transform-origin: (right);
+    }
+
+    header:not(scrolled) nav.smallScreen button{
+        transform : scale(1);
+        transition: transform 0.5s ease;
+        transform-origin: (right);
+    }
+
     div#home {
         display: flex;
         flex-direction: row;
@@ -1055,6 +1097,10 @@ section{
 
     .skillCard {
         transition: none;
+        flex: 1 1 auto;
+        max-width: 100%; 
+        min-width: 152px;
+        width: auto;
     }
 
     .skillCard p{
@@ -1071,13 +1117,14 @@ section{
 
     div.splitted{
         flex-direction: column;
-        align-items: start;
+        align-items: center;
         gap:10px;
     }
 
     div.splittedRight{
-        width: 100%;
+        width:fit-content;
         justify-content: center;
+        margin:0px;
     }
 
     div.splittedRight p{
@@ -1138,7 +1185,8 @@ section{
     }
     .skillCards{
         margin: 0px;
-        width:100%;}
+        width:100%;
+    }
 
     .project-grid {
         display: flex;
@@ -1258,3 +1306,5 @@ section{
     }
 
 }
+
+

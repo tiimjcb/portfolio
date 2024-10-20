@@ -6,12 +6,6 @@ const skills = [
         level: 3
     },
     {
-        link: 'https://www.java.com/fr/',
-        imgSrc: 'assets/icons/java.png',
-        title: 'Java',
-        level: 4
-    },
-    {
         link: 'https://isocpp.org/',
         imgSrc: 'assets/icons/cpp.png',
         title: 'C++',
@@ -105,7 +99,7 @@ function generateSkillCards() {
         const hr = document.createElement('hr');
 
         const p = document.createElement('p');
-        p.textContent = getLevelString(skill.level);
+        p.innerHTML = getLevelString(skill.level); 
 
         card.appendChild(img);
         card.appendChild(h4);
@@ -116,12 +110,14 @@ function generateSkillCards() {
     });
 }
 
-// Fonction pour convertir le niveau en étoiles ● et cercles ○
+
 function getLevelString(level) {
-    const filledCircles = '●'.repeat(level);
-    const emptyCircles = '○'.repeat(5 - level);
+    const filledCircles = '<i class="fas fa-circle"></i>'.repeat(level); // Cercle plein
+    const emptyCircles = '<i class="far fa-circle"></i>'.repeat(5 - level); // Cercle vide
     return filledCircles + emptyCircles;
 }
+
+
 
 document.getElementById('sort-by-name').addEventListener('click', sortByName);
 document.getElementById('sort-by-competence').addEventListener('click', sortByCompetenceAndName);
