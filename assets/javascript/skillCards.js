@@ -112,8 +112,8 @@ function generateSkillCards() {
 
 
 function getLevelString(level) {
-    const filledCircles = '<i class="fas fa-circle"></i>'.repeat(level); // Cercle plein
-    const emptyCircles = '<i class="far fa-circle"></i>'.repeat(5 - level); // Cercle vide
+    const filledCircles = '<i class="fas fa-circle" style="background: linear-gradient(to bottom right, #EF4765, #ff6404); -webkit-background-clip: text; color: transparent;"></i>'.repeat(level); // Cercle plein avec dégradé
+    const emptyCircles = '<i class="far fa-circle" style="background: linear-gradient(to bottom right, #EF4765, #ff6404); -webkit-background-clip: text; color: transparent; opacity: 0.5;"></i>'.repeat(5 - level); // Cercle vide en gris avec opacité réduite
     return filledCircles + emptyCircles;
 }
 

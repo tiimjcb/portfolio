@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div class="card-overlay">
                 <h4>${project.title}</h4>
+                <p class="dateOnLeft">${formatDate(project.date)}</p>
                 <div class="card-details">
                     <p>${project.openDescription}</p>
                 </div>
@@ -117,30 +118,41 @@ document.addEventListener('DOMContentLoaded', () => {
         const cardContent = card.querySelector('.card-content');
         cardContent.style.height = 'auto';
 
-        // Stocker la hauteur initiale de chaque carte
-        initialHeights[project.id] = cardContent.scrollHeight;
+        // Stocker la hauteur initiale de chaque carte après que l'image a été chargée -- nécéssaire sinon ca déconne au niveau de la taille restaurée
+        const img = card.querySelector('img');
+        img.onload = () => {
+            initialHeights[project.id] = cardContent.scrollHeight;
+        };
 
+    
         // Gestion du clic pour afficher l'overlay
         card.addEventListener('click', (e) => {
             if (!card.classList.contains('active')) {
-                e.stopPropagation();
-                closeAllCards();
-            
-                const cardOverlay = card.querySelector('.card-overlay');
-                
-                // Si la largeur de l'écran est <= 650px, on fait l'animation de hauteur
-                if (window.innerWidth <= 650) {
-                    cardContent.style.height = `${initialHeights[project.id]}px`;
-                    cardContent.offsetHeight; // Forcer le recalcul de la mise en page
+            e.stopPropagation();
+            const wasAnyCardOpen = document.querySelector('.project-card.active');
+            closeAllCards();
 
-                    requestAnimationFrame(() => {
-                        cardContent.style.height = `${cardOverlay.scrollHeight}px`;
-                        card.classList.add('active');
-                    });
-                } else {
-                    // Si l'écran est plus grand, on ne fait que l'effet visuel (flou et overlay)
-                    card.classList.add('active');
-                }
+            img.onload = () => {
+                initialHeights[project.id] = cardContent.scrollHeight;
+            };
+            
+            const cardOverlay = card.querySelector('.card-overlay');
+            
+            cardContent.style.height = `${initialHeights[project.id]}px`;
+            cardContent.offsetHeight; // Forcer le recalcul de la mise en page
+
+            const applyHeight = () => {
+                requestAnimationFrame(() => {
+                cardContent.style.height = `${cardOverlay.scrollHeight}px`;
+                card.classList.add('active');
+                });
+            };
+
+            if (wasAnyCardOpen && window.innerWidth > 650) {
+                setTimeout(applyHeight, 200); // Appliquer un délai de 200ms si une autre carte était ouverte et si la largeur de l'écran est supérieure à 650px
+            } else {
+                applyHeight();
+            }
             }
         });
     });
@@ -149,9 +161,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeCard(card, projectId) {
         const cardContent = card.querySelector('.card-content');
         card.classList.remove('active');
-        if (window.innerWidth <= 650){
-            cardContent.style.height = `${initialHeights[projectId]}px`; // Restaurer la hauteur initiale uniquement pour les petits écrans
-        }
+        cardContent.style.height = `${initialHeights[projectId]}px`;
+        setTimeout(() => {
+            cardContent.style.height = 'auto';
+        }, 300);
     }
 
 

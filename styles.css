@@ -93,7 +93,7 @@ nav.bigScreen a img {
 header.scrolled {
     box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.5);
     padding: 15px 40px;
-    transition:height 0.5s ease;
+    transition:height 0.5s ease, padding 0.5s ease, box-shadow 0.3s ease;
 }
 
 header.scrolled nav a img {
@@ -353,6 +353,60 @@ div#home div#homeText p {
     margin-bottom: 0 !important;
 }
 
+.sectionContent div.formationContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:20px;
+    padding:0px 35px;
+    margin-top : 5px;
+}
+
+.sectionContent div.iconOnLeft {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    flex: 1 1 auto;
+    background-color: #2C2C34;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sectionContent div.iconOnLeft img {
+    width: 85px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    margin: 0 20px 0 10px;
+}
+
+.sectionContent div.iconOnLeft div.text {
+    text-align: left;
+}
+
+.sectionContent div.iconOnLeft div.text h4 {
+    font-size: 1.8em; /* Taille plus grande pour le h4 */
+    font-weight: 450;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.sectionContent div.iconOnLeft div.text p {
+    font-size: 1em; /* Taille plus petite pour les p */
+    margin: 0px;
+    color: #C0C0C0;
+}
+
+.sectionContent hr{
+    width: 50%;
+    border: 1px solid #47474f;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left:5px;
+}
+
+
 section{
     display: flex;
     flex-direction: column;
@@ -519,6 +573,14 @@ section{
     color: #C0C0C0;
     align-self: center;
     justify-self: end;
+}
+
+.project-card p.dateOnLeft {
+    margin: 0px;
+    font-size: 0.9em;
+    font-style: italic;
+    color: #C0C0C0;
+    align-self: start;
 }
 
 .project-card p.desc {
@@ -1183,6 +1245,28 @@ section{
     div#home div#homeText h2.bigScreen {
         display: none;
     }
+
+    .sectionContent div.formationContainer{
+        padding:0px;
+    }
+
+    .sectionContent div.iconOnLeft{
+        padding: 10px;
+    }
+
+    .sectionContent div.iconOnLeft img{
+        width:70px;
+    }
+
+    .sectionContent div.formationContainer div.iconOnLeft h4{
+        font-size: 1.5em;
+        margin-bottom : 0px;
+    }
+
+    .sectionContent div.formationContainer div.iconOnLeft p{
+        font-size: 0.9em;
+    }
+
     .skillCards{
         margin: 0px;
         width:100%;
