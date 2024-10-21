@@ -1104,13 +1104,13 @@ section{
         transition: transform 0.5s ease;   
     }
 
-    header.scrolled nav.smallScreen button{
+    header.scrolled nav.smallScreen button#menu-toggle{
         transform : scale(0.8);
         transition: transform 0.5s ease;
         transform-origin: (right);
     }
 
-    header:not(scrolled) nav.smallScreen button{
+    header:not(scrolled) nav.smallScreen button#menu-toggle{
         transform : scale(1);
         transition: transform 0.5s ease;
         transform-origin: (right);
