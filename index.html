@@ -34,7 +34,7 @@
         </div>
 
         <div class="header-left smallScreen">
-            <h1>Portfolio de Tim</h1>
+            <a href="#hello">Portfolio de Tim</a>
         </div>
         <nav class="smallScreen">
             <button id="menu-toggle" class="hamburger hamburger--squeeze" type="button">
@@ -69,7 +69,7 @@
     </header>
     <main>
         <div id="home">
-            <div id="homeImage" class="revealL">
+            <div id="homeImage" class="revealT">
                 <img src="assets/img/memoji.png" alt="Memoji de Tim">
             </div>
             <div id="homeText" class="revealRwD">
@@ -145,30 +145,14 @@
                 <h2>Compétences</h2>
                 <hr>
             </div>
-            <div class="sectionContent">
-                <h3 class="revealL bigScreen">> Mes compétences informatiques</h3>
-                <h3 class="revealL smallScreen">Mes compétences informatiques</h3>
-                <p class="revealLwD noMarginBottom">
-                    Mes compétences en informatiques sont variées et constituent une base solide pour mes aspirations professionnelles.
+            <div class="sectionContent">    
+                <h3 class="revealL bigScreen">> Mes compétences générales</h3>
+                <h3 class="revealL smallScreen">Mes compétences générales</h3>
+                <p class="revealLwD">
+                    Mes compétences sont variées, autant en informatique qu'en général, et constituent une base solide pour mes aspirations professionnelles.
                     <br>
                     J'ai acquis ces compétences grâce à ma formation, mais aussi par moi-même, grâce à ma curiosité.
-                    <br><br>
                 </p>
-                <div class="splitted">
-                    <div class="splittedLeft">
-                        <p class="revealLwD noMarginBottom">Je maitrise les <b>langages de programmation</b> et <b>outils</b> suivants :</p>
-                    </div>
-                    <div class="splittedRight sortButtons revealR">
-                        <p>Tri :</p>
-                        <button id="sort-by-competence" class="btn-sort toggled">Niveau</button>
-                        <button id="sort-by-name" class="btn-sort">Nom</button>
-                    </div>
-                </div>
-                <div class="skillCards revealB">
-                    <!-- Cartes de compétences générées dynamiquement -->
-                </div>
-                <h3 class="revealL bigScreen">> Mes compétences plus générales</h3>
-                <h3 class="revealL smallScreen">Mes compétences plus générales</h3>
                 <ul>
                     <li class="revealLwD">📝 - Conception orientée objet</li>
                     <li class="revealLwD">📊 - Gestion de projet</li>
@@ -178,6 +162,24 @@
                     <li class="revealLwD">🎬 - Montage vidéo</li>
                     <li class="revealLwD">👤 - Analyse des besoins utilisateurs</li>
                 </ul>
+                <h3 class="revealL bigScreen">> Mes compétences informatiques</h3>
+                <h3 class="revealL smallScreen">Mes compétences informatiques</h3>
+                <div class="splitted">
+                    <div class="splittedLeft">
+                        <p class="revealLwD noMarginBottom">Je maitrise les <b>langages de programmation</b> et <b>outils</b> suivants :</p>
+                    </div>
+                    <div class="splittedRight sortButtons revealR">
+                        <button id="sort-a-to-z" class="btn-sort toggled">
+                            <img src="assets/icons/aToZ.svg" alt="A to Z">
+                        </button>
+                        <button id="sort-z-to-a" class="btn-sort">
+                            <img src="assets/icons/zToA.svg" alt="Z to A">
+                        </button>
+                    </div>
+                </div>
+                <div class="skillCardsContainer">
+                    <!-- Cartes de compétences générées dynamiquement -->
+                </div>
                 <h3 class="revealL noMarginBottom bigScreen">> Mes compétenes transversales</h3>
                 <h3 class="revealL noMarginBottom smallScreen">Mes compétenes transversales</h3>
                 <ul class="noMarginBottom">

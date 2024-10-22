@@ -417,9 +417,9 @@ section{
 
 /* ---------- CARTES DES LANGAGES ---------- */
 
-.splittedRight p {
+.splittedLeft p {
     font-weight: 400;
-    margin : 0px 10px;
+    margin : 0px 0px 0px 30px;
 }
 
 .sortButtons {
@@ -428,15 +428,14 @@ section{
 }
 
 .btn-sort{
-    padding:10px 15px;
+    padding:5px 10px;
     border-radius : 0px;
     font-family: 'Gabarito', sans-serif;
     font-size: 0.9em;
-    background-color: #3A3A42;
+    background: #3A3A42;
     color: #EBF5EE;
     border: none;
     cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .btn-sort:first-of-type{
@@ -453,9 +452,23 @@ section{
     color: #FFFFFF;
     border: none;
     box-shadow: 0 0 10px rgba(255, 100, 4, 0.5);
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Transition douce au clic */
 }
 
+.btn-sort img{
+    width: 30px;
+    height: 30px;
+    filter:invert(1);
+}
+
+.skillCardsContainer h3{
+    margin-left : 30px;
+    font-size: 1.5em;
+}
+
+.skillCardsContainer hr{
+    margin : 10px 0px 5px 30px;
+    width: calc(100% - 60px);
+}
 
 .skillCards {
     display: flex;
@@ -464,7 +477,7 @@ section{
     justify-content: center;
     width: calc(100% - 60px); 
     margin: 0 auto;
-    padding: 30px 0;
+    padding: 10px 0px 30px 0px;
     box-sizing: border-box;
 }
 
@@ -499,6 +512,7 @@ section{
     color: #EBF5EE;
     margin: 0;
     cursor:pointer;
+    text-align: center;
 }
 
 .skillCard hr{
@@ -1074,14 +1088,16 @@ section{
         gap: 20px;
     }
 
-    header div.header-left.smallScreen h1 {
+    header div.header-left.smallScreen a {
         font-weight: 450;
         font-size: 2em;
         margin: 10px;
+        text-decoration: none;
+        color: #EBF5EE;
         
     }
 
-    header:not(.scrolled) div h1 {
+    header:not(.scrolled) div a{
         transform: scale(1);
         transform-origin: left;
         transition: transform 0.5s ease;
@@ -1098,7 +1114,7 @@ section{
         transition:height 0.5s ease, padding 0.5s ease;
     }
 
-    header.scrolled div.header-left.smallScreen h1 {
+    header.scrolled div.header-left.smallScreen a {
         transform:scale(0.8);
         transform-origin: left;
         transition: transform 0.5s ease;   
@@ -1159,9 +1175,9 @@ section{
 
     .skillCard {
         transition: none;
-        flex: 1 1 auto;
+        flex: 1 1 30%;
         max-width: 100%; 
-        min-width: 152px;
+        min-width: 100px;
         width: auto;
     }
 
@@ -1265,6 +1281,15 @@ section{
 
     .sectionContent div.formationContainer div.iconOnLeft p{
         font-size: 0.9em;
+    }
+
+    .sortButtons{
+        margin-bottom:10px !important;
+    }
+
+    .skillCardsContainer h3{
+        text-align: center;
+        margin-left : 0px;
     }
 
     .skillCards{

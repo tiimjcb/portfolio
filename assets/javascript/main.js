@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /* --------- Smooth scroll --------- */
 document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('nav a');
+    const navLinks = document.querySelectorAll('nav a, div.header-left.smallScreen a');
 
     navLinks.forEach(link => {
         link.addEventListener('click', function(event) {
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 window.scrollTo({
                     top: targetPosition,
-                    behavior: 'smooth' 
+                    behavior: 'smooth'
                 });
             }
         });
@@ -228,20 +228,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-/* --------- Le sort button --------- */
-document.getElementById('sort-by-name').addEventListener('click', function() {
-    toggleButton(this);
-});
-
-document.getElementById('sort-by-competence').addEventListener('click', function() {
-    toggleButton(this);
-});
-
-function toggleButton(button) {
-    // Enlève la classe "toggled" de tous les boutons
-    document.querySelectorAll('.btn-sort').forEach(btn => btn.classList.remove('toggled'));
-    
-    // Ajoute la classe "toggled" au bouton cliqué
-    button.classList.add('toggled');
-}

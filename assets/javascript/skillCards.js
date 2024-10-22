@@ -1,90 +1,142 @@
-const skills = [
+const langSkills = [
     {
         link: 'https://www.python.org/',
         imgSrc: 'assets/icons/python.png',
-        title: 'Python',
-        level: 3
+        title: 'Python'
     },
     {
         link: 'https://isocpp.org/',
         imgSrc: 'assets/icons/cpp.png',
-        title: 'C++',
-        level: 2
+        title: 'C++'
     },
     {
         link: 'https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5',
         imgSrc: 'assets/icons/html5.png',
-        title: 'HTML5',
-        level: 4
+        title: 'HTML5'
     },
     {
         link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
         imgSrc: 'assets/icons/css3.png',
-        title: 'CSS3',
-        level: 4
+        title: 'CSS3'
     },
     {
         link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
         imgSrc: 'assets/icons/js.png',
-        title: 'JavaScript',
-        level: 2
+        title: 'JavaScript'
     },
     {
         link: 'https://www.php.net/',
         imgSrc: 'assets/icons/php.png',
-        title: 'PHP',
-        level: 2
+        title: 'PHP'
     },
     {
         link: 'https://fr.wikipedia.org/wiki/Structured_Query_Language',
         imgSrc: 'assets/icons/sql.png',
-        title: 'SQL',
-        level: 3
-    },
+        title: 'SQL'
+    }
+];
+
+const toolSkills = [
     {
         link: 'https://www.postgresql.org/',
         imgSrc: 'assets/icons/postgres.png',
-        title: 'PostgreSQL',
-        level: 3
+        title: 'PostgreSQL'
     },
     {
         link: 'https://git-scm.com/',
         imgSrc: 'assets/icons/git.png',
-        title: 'Git',
-        level: 4
+        title: 'Git'
+    },
+    {
+        link: 'https://ubuntu.com/',
+        imgSrc: 'assets/icons/ubuntu.png',
+        title: 'Ubuntu'
+    },
+    {
+        link: 'https://www.apple.com/macos/',
+        imgSrc: 'assets/icons/macos.png',
+        title: 'macOS'
+    },
+    {
+        link: 'https://www.adobe.com/products/photoshop.html',
+        imgSrc: 'assets/icons/photoshop.png',
+        title: 'Photoshop'
+    },
+    {
+        link: 'https://www.microsoft.com/en-us/windows',
+        imgSrc: 'assets/icons/windows.png',
+        title: 'Windows'
+    },
+    {
+        link: 'https://www.debian.org/',
+        imgSrc: 'assets/icons/debian.png',
+        title: 'Debian'
+    },
+    {
+        link: 'https://www.vegascreativesoftware.com/us/vegas-pro/',
+        imgSrc: 'assets/icons/vegaspro.png',
+        title: 'Vegas Pro'
+    },
+    {
+        link: 'https://www.microsoft.com/en-us/microsoft-365',
+        imgSrc: 'assets/icons/office.svg',
+        title: 'Office'
+    },
+    {
+        link: 'https://www.virtualbox.org/',
+        imgSrc: 'assets/icons/virtualbox.png',
+        title: 'VirtualBox'
+    },
+    {
+        link: 'https://code.visualstudio.com/',
+        imgSrc: 'assets/icons/vscode.svg',
+        title: 'VS Code'
+    },
+    {
+        link: 'https://www.jetbrains.com/',
+        imgSrc: 'assets/icons/jetbrains.png',
+        title: 'JetBrains'
     }
 ];
 
-/// Fonction pour trier par nom
-function sortByName() {
-    skills.sort((a, b) => a.title.localeCompare(b.title));
+// Fonction pour trier par nom
+function sortAtoZ() {
+    langSkills.sort((a, b) => a.title.localeCompare(b.title));
+    toolSkills.sort((a, b) => a.title.localeCompare(b.title));
     generateSkillCards(); 
+    document.getElementById('sort-z-to-a').classList.remove('toggled');
+    document.getElementById('sort-a-to-z').classList.add('toggled');
 }
 
-// Fonction pour trier par niveau
-function sortByCompetence() {
-    skills.sort((a, b) => b.level - a.level);
+// Fonction pour trier par nom (inversé)
+function sortZtoA() {
+    langSkills.sort((a, b) => b.title.localeCompare(a.title));
+    toolSkills.sort((a, b) => b.title.localeCompare(a.title));
     generateSkillCards(); 
+    document.getElementById('sort-a-to-z').classList.remove('toggled');
+    document.getElementById('sort-z-to-a').classList.add('toggled');
 }
 
-// Fonction pour trier par compétence ET nom
-function sortByCompetenceAndName() {
-    skills.sort((a, b) => {
-        if (b.level !== a.level) {
-            return b.level - a.level; 
-        } else {
-            return a.title.localeCompare(b.title);
-        }
-    });
-    generateSkillCards(); 
-}
+
 
 // Fonction pour générer les cartes dynamiquement
 function generateSkillCards() {
-    const container = document.querySelector('.skillCards');
+    const container = document.querySelector('.skillCardsContainer');
     container.innerHTML = ''; 
 
-    skills.forEach(skill => {
+    // Générer les cartes pour les langages
+    const langHeader = document.createElement('h3');
+    langHeader.textContent = 'Langages';
+    langHeader.classList.add('revealL');
+    container.appendChild(langHeader);
+
+    const langHr = document.createElement('hr');
+    langHr.classList.add('revealB');
+    container.appendChild(langHr);
+
+    const langContainer = document.createElement('div');
+    langContainer.classList.add('skillCards', 'revealB');
+    langSkills.forEach(skill => {
         const card = document.createElement('a');
         card.href = skill.link;
         card.classList.add('skillCard');
@@ -96,30 +148,47 @@ function generateSkillCards() {
         const h4 = document.createElement('h4');
         h4.textContent = skill.title;
 
-        const hr = document.createElement('hr');
+        card.appendChild(img);
+        card.appendChild(h4);
 
-        const p = document.createElement('p');
-        p.innerHTML = getLevelString(skill.level); 
+        langContainer.appendChild(card);
+    });
+    container.appendChild(langContainer);
+
+    // Générer les cartes pour les outils
+    const toolHeader = document.createElement('h3');
+    toolHeader.textContent = 'Outils';
+    toolHeader.classList.add('revealL');
+    container.appendChild(toolHeader);
+
+    const toolHr = document.createElement('hr');
+    toolHr.classList.add('revealB');
+    container.appendChild(toolHr);
+
+    const toolContainer = document.createElement('div');
+    toolContainer.classList.add('skillCards', 'revealB');
+    toolSkills.forEach(skill => {
+        const card = document.createElement('a');
+        card.href = skill.link;
+        card.classList.add('skillCard');
+
+        const img = document.createElement('img');
+        img.src = skill.imgSrc;
+        img.alt = skill.title;
+
+        const h4 = document.createElement('h4');
+        h4.textContent = skill.title;
 
         card.appendChild(img);
         card.appendChild(h4);
-        card.appendChild(hr);
-        card.appendChild(p);
 
-        container.appendChild(card);
+        toolContainer.appendChild(card);
     });
+    container.appendChild(toolContainer);
 }
+const skills = [...langSkills, ...toolSkills];
 
+document.getElementById('sort-a-to-z').addEventListener('click', sortAtoZ);
+document.getElementById('sort-z-to-a').addEventListener('click', sortZtoA);
 
-function getLevelString(level) {
-    const filledCircles = '<i class="fas fa-circle" style="background: linear-gradient(to bottom right, #EF4765, #ff6404); -webkit-background-clip: text; color: transparent;"></i>'.repeat(level); // Cercle plein avec dégradé
-    const emptyCircles = '<i class="far fa-circle" style="background: linear-gradient(to bottom right, #EF4765, #ff6404); -webkit-background-clip: text; color: transparent; opacity: 0.5;"></i>'.repeat(5 - level); // Cercle vide en gris avec opacité réduite
-    return filledCircles + emptyCircles;
-}
-
-
-
-document.getElementById('sort-by-name').addEventListener('click', sortByName);
-document.getElementById('sort-by-competence').addEventListener('click', sortByCompetenceAndName);
-
-window.onload = sortByCompetenceAndName;
+window.onload = sortAtoZ(); // Tri par défaut
