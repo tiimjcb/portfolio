@@ -33,7 +33,18 @@ const langSkills = [
         link: 'https://fr.wikipedia.org/wiki/Structured_Query_Language',
         imgSrc: 'assets/icons/sql.svg',
         title: 'SQL'
+    },
+    {
+        link : 'https://doc.ubuntu-fr.org/bash',
+        imgSrc : 'assets/icons/bash.svg',
+        title : 'Bash'
+    },
+    {
+        link: 'https://www.java.com/',
+        imgSrc: 'assets/icons/java.png',
+        title: 'Java'
     }
+    
 ];
 
 const toolSkills = [
@@ -89,13 +100,18 @@ const toolSkills = [
     },
     {
         link: 'https://code.visualstudio.com/',
-        imgSrc: 'assets/icons/vscode.svg',
+        imgSrc: 'assets/icons/vscode.png',
         title: 'VS Code'
     },
     {
         link: 'https://www.jetbrains.com/',
         imgSrc: 'assets/icons/jetbrains.png',
         title: 'JetBrains'
+    },
+    {
+        link: 'https://www.notion.so/',
+        imgSrc: 'assets/icons/notion.svg',
+        title: 'Notion'
     }
 ];
 
