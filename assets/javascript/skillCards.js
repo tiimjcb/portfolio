@@ -31,7 +31,7 @@ const langSkills = [
     },
     {
         link: 'https://fr.wikipedia.org/wiki/Structured_Query_Language',
-        imgSrc: 'assets/icons/sql.png',
+        imgSrc: 'assets/icons/sql.svg',
         title: 'SQL'
     }
 ];
