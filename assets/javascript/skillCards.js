@@ -74,11 +74,6 @@ const toolSkills = [
         title: 'Photoshop'
     },
     {
-        link: 'https://www.microsoft.com/en-us/windows',
-        imgSrc: 'assets/icons/windows.png',
-        title: 'Windows'
-    },
-    {
         link: 'https://www.debian.org/',
         imgSrc: 'assets/icons/debian.png',
         title: 'Debian'
