@@ -146,14 +146,23 @@ header div.header-right.bigScreen button {
     align-items: center;
     background-color: #3A3A42;
     border: 0px;
-    transition: box-shadow .2s ease-in-out;
     cursor: pointer;
     user-select: none;
+    transition: box-shadow .2s ease-in-out;
 }
 
 header div.header-right.bigScreen button img {
     width: 28px; 
     height: 28px;
+}
+
+header div.header-right.bigScreen button.btn-icon{
+    transition: box-shadow .2s ease-in-out;
+}
+
+header div.header-right.bigScreen button.btn-icon:hover{
+    box-shadow: 0 0 .3rem rgba(0, 0, 0, 0.3), -.15rem -.15rem 1rem rgba(255, 255, 255, 0.3), .15rem .15rem 1rem rgba(255, 255, 255, 0.3);
+    transition: box-shadow .2s ease-in-out;
 }
 
 header div.header-right.bigScreen button.btn-orange {
@@ -363,6 +372,7 @@ div#home div#homeText p {
     margin-top : 5px;
 }
 
+
 .sectionContent div.iconOnLeft {
     display: flex;
     flex-direction: row;
@@ -370,10 +380,13 @@ div#home div#homeText p {
     align-items: center;
     flex: 1 1 auto;
     background-color: #2C2C34;
+    min-width:45%;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+
 
 .sectionContent div.iconOnLeft img {
     width: 85px;
@@ -495,7 +508,7 @@ section{
     height: auto;
     box-sizing: border-box;
     width: 120px !important;
-    max-width: 50%;
+    max-width: 35%;
     text-decoration: none;
 }
 
