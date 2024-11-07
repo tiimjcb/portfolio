@@ -151,6 +151,7 @@ function generateSkillCards() {
         const card = document.createElement('a');
         card.href = skill.link;
         card.classList.add('skillCard');
+        card.target = '_blank';
 
         const img = document.createElement('img');
         img.src = skill.imgSrc;
@@ -182,6 +183,7 @@ function generateSkillCards() {
         const card = document.createElement('a');
         card.href = skill.link;
         card.classList.add('skillCard');
+        card.target = '_blank';
 
         const img = document.createElement('img');
         img.src = skill.imgSrc;

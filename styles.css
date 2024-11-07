@@ -1431,3 +1431,22 @@ section{
 }
 
 
+@media (min-width:1920px){
+    main{
+        max-width:1920px;
+        margin: 0 calc((100vw - 1920px) / 2 + 10%);
+    }
+
+    header {
+        padding: 20px calc((100vw - 1920px) / 2 + 30px);
+    }
+
+    header.scrolled {
+        padding: 15px calc((100vw - 1920px) / 2 + 40px);
+    }
+
+    .footer-content{
+        max-width: 1920px;
+        margin:auto;
+    }
+}
