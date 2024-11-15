@@ -1455,6 +1455,7 @@ section{
     .card-overlay p {
         font-size: 0.9rem !important;
         margin-bottom: 5px;
+        margin-right:5px;
     }
 
     section{
