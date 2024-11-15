@@ -140,8 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>${project.openDescription}</p>
                 </div>
                 <p class="footer-text">${project.footerText}</p>
-                ${project.hasGitRepo ? `<a href="${project.gitRepoLink}" class="btn" target="_blank">Voir le projet ➔</a>` : ''}
-                ${project.hasFile ? `<a href="${project.fileLink}" class="btn" target="_blank">Voir le fichier ➔</a>` : ''}
+                ${project.hasGitRepo ? `<a href="${isGithubPages ? `/portfolio${project.gitRepoLink}` : project.gitRepoLink}" class="btn" target="_blank">Voir le projet ➔</a>` : ''}
+                ${project.hasFile ? `<a href="${isGithubPages ? `/portfolio${project.fileLink}` : project.fileLink}" class="btn" target="_blank">Voir le fichier ➔</a>` : ''}
             </div>
         `;
 
