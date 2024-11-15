@@ -632,7 +632,20 @@ section{
     height: 100%;
     transition: filter 0.3s ease, height 0.3s ease;
     gap:10px;
+}
 
+.project-card.in-progress {
+    box-shadow: inset 0 0 10px rgba(255, 165, 0, 0.5);
+    animation: lightGlow 3s infinite alternate;
+}
+
+@keyframes lightGlow {
+    from {
+        box-shadow: inset 0 0 15px rgba(255, 165, 0, 0.5);
+    }
+    to {
+        box-shadow: inset 0 0 30px rgba(255, 165, 0, 0.8);
+    }
 }
 
 .card-content img {
@@ -686,6 +699,26 @@ section{
     color: #EBF5EE;
     text-align: left;
     font-size: 1.3em;
+}
+
+.card-overlay a.btn{
+    margin-top:10px;
+    background: linear-gradient(to bottom right, #EF4765, #ff6404);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-family: 'Gabarito', sans-serif;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in-out;
+    text-decoration: none;
+    align-self:flex-start;
+    width:auto;
+}
+
+.card-overlay a.btn:hover {
+    box-shadow: 0 0 10px rgba(255, 100, 4, 0.5);
 }
 
 .card-details p {

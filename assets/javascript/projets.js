@@ -56,16 +56,20 @@ document.addEventListener('DOMContentLoaded', () => {
             closedDescription: "Tri d'une BD répertoriant des infos. sur le Nutri-Score des produits alimentaires.",
             openDescription: "Projet dans le cadre des études. Tri et rédaction d'un rapport sur une BD contenant des infos. relatives au Nutri-Score de denrées alimentaires, afin d'en comprendre son fonctionnement et ses failles.",
             footerText: "Compétences renforcées : SQL, Analyse de données, RMD",
-            icon: "/assets/icons/barchartEmoji.png"
+            icon: "/assets/icons/barchartEmoji.png",
+            hasFile:true,
+            fileLink:"/assets/files/rapportNutriScore.pdf"
         },
         {
             id: "project7",
-            title: "Installation serveur Debian",
+            title: "Guide d'install. serveur Debian",
             date: "2024-05-01",
             closedDescription: "Installation d'un serveur Debian avec outils basiques.",
             openDescription: "Projet dans le cadre des études. Installation d'un serveur Debian avec outils basiques (Apache, Postgres) afin d'en rédiger un guide détaillé en Anglais pour des étudiants débutants.",
             footerText: "Compétences renforcées : Linux, Serveurs, Rédaction anglaise",
-            icon: "/assets/icons/debian.png"
+            icon: "/assets/icons/debian.png",
+            hasFile:true,
+            fileLink:"/assets/files/guideInstallServeurDebian.pdf"
         },
         {
             id: "project8",
@@ -75,6 +79,28 @@ document.addEventListener('DOMContentLoaded', () => {
             openDescription: "Projet dans le cadre des études. Développement d'une application de gestion d'évènements en Java, avec interface graphique, permettant de gérer des évènements et des participants.",
             footerText: "Compétences renforcées : JavaFX, Leadership, Gestion de projet",
             icon: "/assets/icons/partyEmoji.png"
+        },
+        {
+            id:"project9",
+            title:"Tempo for PiZero",
+            date:"2024-11-01",
+            closedDescription:"Développement d'un écran E-Ink pour afficher la tarification de l'électricité.",
+            openDescription:"Projet en cours. Développement d'un programme Python pour un écran E-Ink connecté à un Raspberry Pi Zero, affichant la tarification de l'électricité pour l'abonnement EDF Tempo.",
+            footerText:"Compétences renforcées : Python, Linux",
+            icon:"/assets/icons/electricityEmoji.png",
+            hasGitRepo:true,
+            gitRepoLink:"https://github.com/tiimjcb/tempoForPiZero",
+            inProgress:true
+        },
+        {
+            id:"project10",
+            title:"Dauphinéo",
+            date:"2024-12-01",
+            closedDescription:"Développement d'une app. web mettant en avant le patrimoine culturel.",
+            openDescription:"Projet en cours dans le cadre des études. Développement en équipe d'une application web pour mettre en avant les Sites Patrimoniaux Remarquables (SPR).",
+            footerText:"Compétences renforcées : HTML/CSS, React (JS), Conception web",
+            icon:"/assets/icons/castleEmoji.png",
+            inProgress:true
         }
     ];
 
@@ -91,6 +117,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = document.createElement('div');
         card.className = 'project-card';
         card.setAttribute('id', project.id); // Ajout d'un ID unique pour chaque projet
+
+        if(project.inProgress){
+            card.classList.add('in-progress');
+        }
 
         card.innerHTML = `
             <div class="card-content">
@@ -110,6 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>${project.openDescription}</p>
                 </div>
                 <p class="footer-text">${project.footerText}</p>
+                ${project.hasGitRepo ? `<a href="${project.gitRepoLink}" class="btn" target="_blank">Voir le projet ➔</a>` : ''}
+                ${project.hasFile ? `<a href="${project.fileLink}" class="btn" target="_blank">Voir le fichier ➔</a>` : ''}
             </div>
         `;
 
