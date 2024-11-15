@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             footerText: "Compétences renforcées : SQL, Analyse de données, RMD",
             icon: "/assets/icons/barchartEmoji.png",
             hasFile:true,
-            fileLink:"/assets/files/rapportNutriScore.pdf"
+            fileLink:"/assets/files/rapportNutriscore.pdf"
         },
         {
             id: "project7",
