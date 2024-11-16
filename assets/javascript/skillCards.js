@@ -137,7 +137,7 @@ function generateSkillCards() {
 
     // Générer les cartes pour les langages
     const langHeader = document.createElement('h3');
-    langHeader.textContent = 'Langages';
+    langHeader.textContent = 'Langages et frameworks';
     langHeader.classList.add('revealL');
     container.appendChild(langHeader);
 
