@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Analyse base de données",
             date: "2024-01-01",
             closedDescription: "Analyse d'une DB contenant des informations sur les passagers du Titanic.",
-            openDescription: "Projet dans le cadre des études. Analyse d'une BD pour comprendre les facteurs qui ont influencé la survie des passagers du Titanic, grâce à des commandes SQL.",
-            footerText: "Compétences renforcées : SQL, Analyse de données, Travail d'équipe",
+            openDescription: "Projet dans le cadre des études.<br>Analyse d'une BD pour comprendre les facteurs qui ont influencé la survie des passagers du Titanic, grâce à des commandes SQL.",
+            footerText: "Compétences renforcées : PostgreSQL, Analyse de données, Travail d'équipe",
             icon: "/assets/icons/boatEmoji.png"
         },
         {
@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Site web pour ESN",
             date: "2024-01-01",
             closedDescription: "Développement du site web d'une ESN visant à mettre en avant l'entreprise.",
-            openDescription: "Projet dans le cadre des études. Conception et réal. d'un site web pour une ESN, destiné à la génération Alpha dans le but de promouvoir l'entreprise et ses valeurs.",
-            footerText: "Compétences renforcées : HTML, CSS, Conception web",
+            openDescription: "Projet dans le cadre des études.<br>Conception et réalisation d'un site web (fictif) pour une ESN, destiné à la génération Alpha dans le but de promouvoir l'entreprise et ses valeurs.",
+            footerText: "Compétences renforcées : HTML, CSS, Gestion de projet",
             icon: "/assets/icons/globeEmoji.png"
         },
         {
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "App. de classification Java",
             date: "2024-02-01",
             closedDescription: "Développement d'un programme de classification de dépêches en Java.",
-            openDescription: "Projet dans le cadre des études. Développement d'un programme de classification de dépêches en Java, utilisant des algorithmes de machine learning pour prédire la catégorie d'une dépêche.",
+            openDescription: "Projet dans le cadre des études.<br>Développement d'un programme de classification de dépêches en Java, utilisant des algorithmes de machine learning pour prédire la catégorie d'une dépêche.",
             footerText: "Compétences renforcées : Java",
             icon: "/assets/icons/journalEmoji.png"
         },
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Tri base de données",
             date: "2024-04-01",
             closedDescription: "Tri d'une BD répertoriant des infos. sur le Nutri-Score des produits alimentaires.",
-            openDescription: "Projet dans le cadre des études. Tri et rédaction d'un rapport sur une BD contenant des infos. relatives au Nutri-Score de denrées alimentaires, afin d'en comprendre son fonctionnement et ses failles.",
+            openDescription: "Projet dans le cadre des études.<br>Tri et rédaction d'un rapport sur une BD contenant des infos. relatives au Nutri-Score de denrées alimentaires, afin d'en comprendre son fonctionnement et ses failles.",
             footerText: "Compétences renforcées : SQL, Analyse de données, RMD",
             icon: "/assets/icons/barchartEmoji.png",
             hasFile:true,
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Guide d'install. serveur Debian",
             date: "2024-05-01",
             closedDescription: "Installation d'un serveur Debian avec outils basiques.",
-            openDescription: "Projet dans le cadre des études. Installation d'un serveur Debian avec outils basiques (Apache, Postgres) afin d'en rédiger un guide détaillé en Anglais pour des étudiants débutants.",
+            openDescription: "Projet dans le cadre des études.<br>Installation d'un serveur Debian avec outils basiques (Apache, Postgres) afin d'en rédiger un guide détaillé en Anglais pour des étudiants débutants.",
             footerText: "Compétences renforcées : Linux, Serveurs, Rédaction anglaise",
             icon: "/assets/icons/debian.png",
             hasFile:true,
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "App. de gestion d'évènements",
             date: "2024-06-01",
             closedDescription: "Développement d'une app. de gestion d'évènements avec interface graphique.",
-            openDescription: "Projet dans le cadre des études. Développement d'une application de gestion d'évènements en Java, avec interface graphique, permettant de gérer des évènements et des participants.",
+            openDescription: "Projet dans le cadre des études.<br>Développement d'une application de gestion d'évènements en Java, avec interface graphique, permettant de gérer des évènements et des participants.",
             footerText: "Compétences renforcées : JavaFX, Leadership, Gestion de projet",
             icon: "/assets/icons/partyEmoji.png"
         },
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title:"Tempo for PiZero",
             date:"2024-11-01",
             closedDescription:"Développement d'un écran E-Ink pour afficher la tarification de l'électricité.",
-            openDescription:"Projet en cours. Développement d'un programme Python pour un écran E-Ink connecté à un Raspberry Pi Zero, affichant la tarification de l'électricité pour l'abonnement EDF Tempo.",
+            openDescription:"Projet en cours.<br>Développement d'un programme Python pour un écran E-Ink connecté à un Raspberry Pi Zero, affichant la tarification de l'électricité pour l'abonnement EDF Tempo.",
             footerText:"Compétences renforcées : Python, Linux",
             icon:"/assets/icons/electricityEmoji.png",
             hasGitRepo:true,
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title:"Dauphinéo",
             date:"2024-12-01",
             closedDescription:"Développement d'une app. web mettant en avant le patrimoine culturel.",
-            openDescription:"Projet en cours dans le cadre des études. Développement en équipe d'une application web pour mettre en avant les Sites Patrimoniaux Remarquables (SPR).",
+            openDescription:"Projet en cours dans le cadre des études.<br>Développement en équipe d'une application web pour mettre en avant les Sites Patrimoniaux Remarquables (SPR).",
             footerText:"Compétences renforcées : HTML/CSS, React (JS), Conception web",
             icon:"/assets/icons/castleEmoji.png",
             inProgress:true
