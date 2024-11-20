@@ -114,6 +114,21 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: "project9",
+            title: "Portfolio",
+            titleEN: "Portfolio",
+            date: "2024-09-01",
+            closedDescription: "Création de ce portfolio pour présenter mes projets et compétences.",
+            closedDescriptionEN: "Creation of this portfolio to showcase my projects and skills.",
+            openDescription: "Projet évolutif.<br>Développement de ce portfolio pour présenter mes projets et compétences, en utilisant HTML, CSS et JavaScript. Je considère cela comme un projet, car il contribue à mon apprentissage.",
+            openDescriptionEN: "Evolutive project.<br>Developing this portfolio to showcase my projects and skills, using HTML, CSS, and JavaScript. I consider this as a project as it contributes to my learning.",
+            footerText: "Compétences renforcées : HTML, CSS, JavaScript",
+            footerTextEN: "Skills improved: HTML, CSS, JavaScript",
+            icon: "/assets/icons/openfolderEmoji.png",
+            hasGitRepo: true,
+            gitRepoLink: "https://github.com/tiimjcb/portfolio"
+        },
+        {
+            id: "project10",
             title: "Tempo for PiZero",
             titleEN: "Tempo for PiZero",
             date: "2024-11-01",
@@ -129,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
             inProgress: true
         },
         {
-            id: "project10",
+            id: "project11",
             title: "Dauphinéo",
             titleEN: "Dauphinéo",
             date: "2024-12-01",
@@ -173,24 +188,24 @@ document.addEventListener('DOMContentLoaded', () => {
     
         card.innerHTML = `
             <div class="card-content">
-                <div class="card-image-wrapper">
-                    <img src="${iconPath}" alt="${title}">
-                </div>
-                <div class="card-text-wrapper">
-                    <h3>${title}</h3>
-                    <p class="date">${formatDate(project.date)}</p>
-                    <p class="desc">${closedDescription}</p>
-                </div>
+            <div class="card-image-wrapper">
+                <img src="${iconPath}" alt="${title}">
+            </div>
+            <div class="card-text-wrapper">
+                <h3>${title}</h3>
+                <p class="date">${formatDate(project.date)}</p>
+                <p class="desc">${closedDescription}</p>
+            </div>
             </div>
             <div class="card-overlay">
-                <h4>${title}</h4>
-                <p class="dateOnLeft">${formatDate(project.date)}</p>
-                <div class="card-details">
-                    <p>${openDescription}</p>
-                </div>
-                <p class="footer-text">${footerText}</p>
-                ${project.hasGitRepo ? `<a href="${isGithubPages ? `/portfolio${project.gitRepoLink}` : project.gitRepoLink}" class="btn" target="_blank">See the project ➔</a>` : ''}
-                ${project.hasFile ? `<a href="${isGithubPages ? `/portfolio${project.fileLink}` : project.fileLink}" class="btn" target="_blank">See the file ➔</a>` : ''}
+            <h4>${title}</h4>
+            <p class="dateOnLeft">${formatDate(project.date)}</p>
+            <div class="card-details">
+                <p>${openDescription}</p>
+            </div>
+            <p class="footer-text">${footerText}</p>
+            ${project.hasGitRepo ? `<a href="${isGithubPages ? `/portfolio${project.gitRepoLink}` : project.gitRepoLink}" class="btn" target="_blank">${isEnglish ? 'See the project ➔' : 'Voir le projet ➔'}</a>` : ''}
+            ${project.hasFile ? `<a href="${isGithubPages ? `/portfolio${project.fileLink}` : project.fileLink}" class="btn" target="_blank">${isEnglish ? 'See the file ➔' : 'Voir le fichier ➔'}</a>` : ''}
             </div>
         `;
 
