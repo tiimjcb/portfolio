@@ -128,16 +128,17 @@ function sortZtoA() {
     document.getElementById('sort-z-to-a').classList.add('toggled');
 }
 
-
-
 // Fonction pour générer les cartes dynamiquement
 function generateSkillCards() {
     const container = document.querySelector('.skillCardsContainer');
     container.innerHTML = ''; 
 
+    // Vérifier si la page est "indexEN.html"
+    const isEnglishPage = window.location.pathname.includes('indexEN.html');
+
     // Générer les cartes pour les langages
     const langHeader = document.createElement('h3');
-    langHeader.textContent = 'Langages et frameworks';
+    langHeader.textContent = isEnglishPage ? 'Languages and Frameworks' : 'Langages et frameworks';
     langHeader.classList.add('revealL');
     container.appendChild(langHeader);
 
@@ -169,7 +170,7 @@ function generateSkillCards() {
 
     // Générer les cartes pour les outils
     const toolHeader = document.createElement('h3');
-    toolHeader.textContent = 'Outils';
+    toolHeader.textContent = isEnglishPage ? 'Tools' : 'Outils';
     toolHeader.classList.add('revealL');
     container.appendChild(toolHeader);
 

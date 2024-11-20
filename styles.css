@@ -1051,6 +1051,7 @@ section{
     text-decoration: none;
     padding: 8px 0;
     transition: color 0.3s ease;
+    pointer-events: auto;
 }
 
 .overlay-content a:hover {
@@ -1064,6 +1065,9 @@ section{
     padding: 0px;
     transition: color 0.3s ease;
     margin-top:0px;
+    cursor: pointer;
+    pointer-events: auto;
+    touch-action: manipulation;
 }
 
 .overlay-content hr {

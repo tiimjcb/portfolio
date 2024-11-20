@@ -95,7 +95,7 @@ function updateHello() {
     const isEnglishPage = window.location.pathname.includes('indexEN.html');
     
     if (isEnglishPage) {
-        greetingElement.textContent = "Hello !";
+        greetingElement.textContent = "Hey !";
     } else {
         if (hours >= 18 || hours < 6) {
             greetingElement.textContent = 'Bonsoir !';
@@ -171,11 +171,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-/* --------- Date de dernière mise à jour --------- */
+/* --------- Date de dernière mise à jour et back to top --------- */
 document.addEventListener('DOMContentLoaded', () => {
     const lastUpdatedElement = document.getElementById('last-updated');
     const lastUpdatedDate = new Date(document.lastModified);
-    lastUpdatedElement.textContent = lastUpdatedDate.toLocaleDateString('fr-FR', {
+    const isEnglishPage = window.location.pathname.includes('indexEN.html');
+    
+    lastUpdatedElement.textContent = lastUpdatedDate.toLocaleDateString(isEnglishPage ? 'en-US' : 'fr-FR', {
         year: 'numeric',
         month: 'long',
         day: 'numeric'
@@ -222,13 +224,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const overlayLinks = overlayMenu.querySelectorAll('a, button');
     overlayLinks.forEach((link) => {
-        link.addEventListener('click', () => {
-            setTimeout(() => {
+        link.addEventListener('click', (event) => {
+            const href = link.getAttribute('href');
+
+            if (href === 'index.html' || href === 'indexEN.html') {
+                // Je force la redirection ici parce que ça marche pas tout seul dans le html aucune idée de pourquoi
+                event.preventDefault();
                 overlayMenu.classList.remove('active');
-            }, 50);
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 100);
+            } else if (href && href.startsWith('#')) {
+
+                // Liens d'ancrage internes
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    event.preventDefault();
+                    overlayMenu.classList.remove('active');
+                    const targetPosition = targetElement.offsetTop - 30; // Décalage de 30px sinn le header passe par dessus
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            } else if (link.tagName === 'BUTTON') {   // Gestion des boutons
+                setTimeout(() => {
+                    overlayMenu.classList.remove('active');
+                }, 50);
+            }
         });
     });
 
+    // On ferme le menu si clic ailleurs
     document.addEventListener('click', (event) => {
         if (!overlayMenu.contains(event.target) && event.target !== menuToggle) {
             overlayMenu.classList.remove('active');
