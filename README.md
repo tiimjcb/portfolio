@@ -18,5 +18,5 @@ Ce portfolio a été créé pour :
 
 ## 📄 Licence
 
-Ce projet est sous licence MIT avec une clause spécifique.  
-L'utilisation du nom "Timothé Jacob" ou toute référence à l'identité de l'auteur est strictement interdite sans autorisation préalable. Consultez le fichier [LICENSE](./LICENSE) pour plus de détails.
+Ce projet est sous licence **MIT**.  
+Vous êtes libre d'utiliser, de modifier et de distribuer ce code, tant que vous incluez un crédit à l'auteur. Consultez le fichier [LICENSE](./LICENSE) pour plus de détails.
