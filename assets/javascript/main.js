@@ -92,9 +92,16 @@ function updateHello() {
     const now = new Date();
     const hours = now.getHours();
     const greetingElement = document.getElementById('hello');
+    const isEnglishPage = window.location.pathname.includes('indexEN.html');
     
-    if (hours >= 18 || hours < 6) {
-        greetingElement.textContent = 'Bonsoir !';
+    if (isEnglishPage) {
+        greetingElement.textContent = "Hello !";
+    } else {
+        if (hours >= 18 || hours < 6) {
+            greetingElement.textContent = 'Bonsoir !';
+        } else {
+            greetingElement.textContent = 'Bonjour !';
+        }
     }
 }
 
