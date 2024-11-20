@@ -1,0 +1,10 @@
+# Fichiers système macOS
+.DS_Store
+__MACOSX/
+
+# Fichiers temporaires ou inutiles
+*.log
+*.tmp
+
+# Dossier Git lui-même (par précaution, souvent déjà géré par défaut)
+.git/
