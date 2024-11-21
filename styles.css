@@ -1528,7 +1528,8 @@ section{
     }
 
     header {
-        padding: 20px calc((100vw - 1920px) / 2 + 30px);
+        padding: 30px calc((100vw - 1920px) / 2 + 30px) 20px;
+        
     }
 
     header.scrolled {
@@ -1539,4 +1540,17 @@ section{
         max-width: 1920px;
         margin:auto;
     }
+
+    header div.header-right.bigScreen a.langSwitch{
+        top: 10px;
+        right: calc((100vw - 1920px) / 2 + 49px);
+    }
+
+    header.scrolled div.header-right.bigScreen a.langSwitch {
+        opacity: 0%;
+        top: -10px;
+        right: calc((100vw - 1920px) / 2 + 65px);
+        transition: opacity 0.5s ease, top 0.5s ease, right 0.5s ease;
+    }
+    
 }
