@@ -107,6 +107,11 @@ const toolSkills = [
         link: 'https://www.notion.so/',
         imgSrc: 'assets/icons/notion.svg',
         title: 'Notion'
+    },
+    {
+        link: 'https://www.latex-project.org/',
+        imgSrc: 'assets/icons/latex.png',
+        title: 'LaTeX'
     }
 ];
 
