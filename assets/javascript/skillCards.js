@@ -112,6 +112,11 @@ const toolSkills = [
         link: 'https://www.latex-project.org/',
         imgSrc: 'assets/icons/latex.png',
         title: 'LaTeX'
+    },
+    {
+        link: 'https://www.sqlite.org/',
+        imgSrc: 'assets/icons/sqlite.png',
+        title: 'SQLite'
     }
 ];
 
