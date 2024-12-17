@@ -64,16 +64,6 @@ const toolSkills = [
         title: 'Ubuntu'
     },
     {
-        link: 'https://www.apple.com/macos/',
-        imgSrc: 'assets/icons/macos.png',
-        title: 'macOS'
-    },
-    {
-        link: 'https://www.adobe.com/products/photoshop.html',
-        imgSrc: 'assets/icons/photoshop.png',
-        title: 'Photoshop'
-    },
-    {
         link: 'https://www.debian.org/',
         imgSrc: 'assets/icons/debian.png',
         title: 'Debian'
@@ -102,11 +92,6 @@ const toolSkills = [
         link: 'https://www.jetbrains.com/',
         imgSrc: 'assets/icons/jetbrains.png',
         title: 'JetBrains'
-    },
-    {
-        link: 'https://www.notion.so/',
-        imgSrc: 'assets/icons/notion.svg',
-        title: 'Notion'
     },
     {
         link: 'https://www.latex-project.org/',
