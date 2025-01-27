@@ -129,22 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: "project10",
-            title: "Tempo for PiZero",
-            titleEN: "Tempo for PiZero",
-            date: "2024-11-01",
-            closedDescription: "Développement d'un écran E-Ink pour afficher la tarification de l'électricité.",
-            closedDescriptionEN: "Development of an E-Ink screen to display electricity pricing.",
-            openDescription: "Projet en cours.<br>Développement d'un programme Python pour un écran E-Ink connecté à un Raspberry Pi Zero, affichant la tarification de l'électricité pour l'abonnement EDF Tempo.",
-            openDescriptionEN: "Ongoing project.<br>Developing a Python program for an E-Ink screen connected to a Raspberry Pi Zero to display electricity pricing for the EDF Tempo subscription.",
-            footerText: "Compétences renforcées : Python, Linux",
-            footerTextEN: "Skills improved: Python, Linux",
-            icon: "/assets/icons/electricityEmoji.png",
-            hasGitRepo: true,
-            gitRepoLink: "https://github.com/tiimjcb/tempoForPiZero",
-            inProgress: true
-        },
-        {
-            id: "project11",
             title: "FSD Discord Bot",
             titleEN: "FSD Discord Bot",
             date: "2024-12-01",
@@ -159,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
             gitRepoLink: "https://github.com/tiimjcb/freeSmileyDealerBotRevived"
         },
         {
-            id: "project12",
+            id: "project11",
             title: "Dauphinéo",
             titleEN: "Dauphinéo",
             date: "2025-01-01",
@@ -169,8 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
             openDescriptionEN: "Ongoing academic project.<br>Team development of a web application to highlight remarkable heritage sites (SPR).",
             footerText: "Compétences renforcées : HTML/CSS, React (JS), Conception web",
             footerTextEN: "Skills improved: HTML/CSS, React (JS), Web Design",
-            icon: "/assets/icons/castleEmoji.png",
-            inProgress: true
+            icon: "/assets/icons/castleEmoji.png"
         }
     ];
 
