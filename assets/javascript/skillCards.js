@@ -43,6 +43,11 @@ const langSkills = [
         link: 'https://www.java.com/',
         imgSrc: 'assets/icons/java.png',
         title: 'Java'
+    },
+    {
+        link: 'https://reactjs.org/',
+        imgSrc: 'assets/icons/react.png',
+        title: 'React'
     }
     
 ];

@@ -342,7 +342,6 @@ div#home div#homeText p {
 .sectionContent {
     display: flex;
     flex-direction: column;
-    align-items: left;
     margin: 10px 0px;
     width:100%;
 }
