@@ -149,11 +149,24 @@ document.addEventListener('DOMContentLoaded', () => {
             date: "2025-01-01",
             closedDescription: "Développement d'une app. web mettant en avant le patrimoine culturel.",
             closedDescriptionEN: "Development of a web application showcasing cultural heritage.",
-            openDescription: "Projet en cours dans le cadre des études.<br>Développement en équipe d'une application web pour mettre en avant les Sites Patrimoniaux Remarquables (SPR).",
-            openDescriptionEN: "Ongoing academic project.<br>Team development of a web application to highlight remarkable heritage sites (SPR).",
+            openDescription: "Projet dans le cadre des études.<br>Développement en équipe d'une application web pour mettre en avant les Sites Patrimoniaux Remarquables (SPR).",
+            openDescriptionEN: "Academic project.<br>Team development of a web application to highlight remarkable heritage sites (SPR).",
             footerText: "Compétences renforcées : HTML/CSS, React (JS), Conception web",
             footerTextEN: "Skills improved: HTML/CSS, React (JS), Web Design",
             icon: "/assets/icons/castleEmoji.png"
+        },
+        {
+            id: "project12",
+            title: "App. de recherche de stage",
+            titleEN: "Internship Search App",
+            date: "2025-04-01",
+            closedDescription: "Refactoring d'une application Android de recherche de stage.",
+            closedDescriptionEN: "Refactoring of an internship search Android application.",
+            openDescription: "Projet dans le cadre des études<br>Refactoring d'une application mobile en Android Natif, avec un back-office web en Symfony, à destination d'étudiants et de professeurs dans un contexte de suivi de recherche de stage.",
+            openDescriptionEN: "Academic project<br> Refactored a mobile application in Native Android, with a web back-office in Symfony, for students and teachers in the context of internship search tracking.",
+            footerText: "Compétences renforcées : Android, Symfony, Interfaces utilisateurs",
+            footerTextEN: "Skills improved: Android, Symfony, User Interfaces",
+            icon: "/assets/icons/smartphone.png"
         }
     ];
 
