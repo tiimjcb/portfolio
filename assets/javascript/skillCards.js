@@ -107,6 +107,16 @@ const toolSkills = [
         link: 'https://www.sqlite.org/',
         imgSrc: 'assets/icons/sqlite.png',
         title: 'SQLite'
+    },
+    {
+        link: 'https://www.apple.com/swift',
+        imgSrc: 'assets/icons/swift.png',
+        title: 'Swift'
+    },
+    {
+        link: 'https://angular.dev/',
+        imgSrc: 'assets/icons/angular.png',
+        title: 'Angular'
     }
 ];
 
